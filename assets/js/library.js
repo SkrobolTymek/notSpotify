@@ -1,8 +1,8 @@
 function usunPiosenke(title) {
     let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-    playlist = playlist.filter((song) => song.title !== title); // Filtruje playlistę, usuwając piosenkę o podanym tytule
-    localStorage.setItem('playlist', JSON.stringify(playlist)); // Aktualizuje playlistę w LocalStorage
-    renderLibrary(); // Ponowne renderowanie listy
+    playlist = playlist.filter((song) => song.title !== title);
+    localStorage.setItem('playlist', JSON.stringify(playlist)); 
+    renderLibrary(); 
     console.log(`Usunięto piosenkę: ${title}`);
 }
 
@@ -10,7 +10,7 @@ function renderLibrary() {
     let libraryContainer = document.querySelector(".library-container");
     let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
 
-    libraryContainer.innerHTML = ""; // Czyszczenie listy
+    libraryContainer.innerHTML = "";
 
     playlist.forEach((song) => {
         libraryContainer.innerHTML += `

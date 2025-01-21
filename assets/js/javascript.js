@@ -298,18 +298,14 @@ let piosenka12 = `<div class="piosenka">
             
 
 let containerPiosenki = document.querySelector('.container');
-// containerPiosenki.innerHTML = `${piosenka1}${piosenka2}${piosenka3}${piosenka4}${piosenka5}${piosenka6}${piosenka7}${piosenka8}${piosenka9}${piosenka10}${piosenka11}${piosenka12}`;
 
-// Pobieranie danych z LocalStorage
 let songTitle = localStorage.getItem('selectedSong');
 
 
 console.log(localStorage.getItem('playlist'));
 
-// Sprawdzanie, czy tytuł istnieje
 if (songTitle) {
     console.log(`Odczytany tytuł piosenki: ${songTitle}`);
-    // Możesz tutaj użyć `songTitle` według potrzeby
 } else {
     console.log('Brak wybranego tytułu piosenki w LocalStorage.');
 }
@@ -317,8 +313,7 @@ if (songTitle) {
 
   let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
 
-   document.querySelector('.container').innerHTML = ""; // Czyszczenie listy
-
+   document.querySelector('.container').innerHTML = ""; 
   playlist.forEach((song) => {
         document.querySelector('.container').innerHTML += `
           <div class="piosenka">
@@ -344,10 +339,10 @@ let piosenki = document.querySelectorAll(".piosenka");
 piosenki.forEach(function (piosenka) {
   piosenka.addEventListener("click", function () {
     piosenki.forEach(function () {
-      piosenka.id = ""; // Resetowanie ID wszystkich elementów
+      piosenka.id = ""; 
     });
-    piosenka.id = "wybranaPiosenka"; // Ustawienie ID na kliknięty element
-    zmianaPiosenek(); // Wywołanie funkcji zmiany
+    piosenka.id = "wybranaPiosenka"; 
+    zmianaPiosenek(); 
   });
 });
 
@@ -458,12 +453,12 @@ function zmianaPiosenek() {
 
   let audioPlayer = document.querySelector(".audio-player");
   audioPlayer.innerHTML = `
-    <audio controls id='background_audio1'>
-        <source src='${songUrl}' />
+    <audio controls id="background_audio1">
+        <source src="${songUrl}" />
         Your browser does not support the audio element.
     </audio>
     <div id="PokazName">${wybranaPiosenka}</div>
-    `;
+`;
 
   let songInfo = document.querySelector(".songInfo");
   songInfo.innerHTML = `
@@ -494,7 +489,8 @@ function showTime() {
 
   let currentTime = hour + ":" + min + ":" + sec + " " + am_pm;
 
-  document.querySelector(".clock").innerHTML = `<h2>${currentTime} </h2>`;
+  document.querySelector(".clock").innerHTML = `<h2>${currentTime}</h2>`;
+
 }
 
 showTime();
