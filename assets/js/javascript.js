@@ -538,19 +538,20 @@ document.getElementById("librarynav").addEventListener('click', function (){
   document.querySelector('main').style.marginTop = '0px';
 
  document.querySelector('main').innerHTML = ` <div class="library-container"></div>`
-  function usunPiosenke(title) {
-    let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-    playlist = playlist.filter((song) => song.title !== title);
-    localStorage.setItem('playlist', JSON.stringify(playlist)); 
-    renderLibrary(); 
-    console.log(`Usunięto piosenkę: ${title}`);
-}
 
 function renderLibrary() {
     let libraryContainer = document.querySelector(".library-container");
     let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
 
     libraryContainer.innerHTML = "";
+
+    function usunPiosenke(title) {
+      let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+      playlist = playlist.filter((song) => song.title !== title);
+      localStorage.setItem('playlist', JSON.stringify(playlist));
+      renderLibrary();
+      console.log(`Usunięto piosenkę: ${title}`);
+    }
 
     playlist.forEach((song) => {
         libraryContainer.innerHTML += `
@@ -565,13 +566,7 @@ function renderLibrary() {
     });
 }
 
-function usunPiosenke(title) {
-  let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-  playlist = playlist.filter((song) => song.title !== title);
-  localStorage.setItem('playlist', JSON.stringify(playlist));
-  renderPlaylist();
-  console.log(`Usunięto piosenkę: ${title}`);
-}
+
 
 document.addEventListener("DOMContentLoaded", renderLibrary());
 
