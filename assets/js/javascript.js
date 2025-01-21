@@ -548,13 +548,7 @@ function renderLibrary() {
     
 
     playlist.forEach((song) => {
-      function usunPiosenke(title) {
-        let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-        playlist = playlist.filter((song) => song.title !== title);
-        localStorage.setItem('playlist', JSON.stringify(playlist));
-        renderLibrary();
-        console.log(`Usunięto piosenkę: ${title}`);
-      }
+      
         libraryContainer.innerHTML += `
             <div class="library-song">
                 <img src="${song.image}" alt="${song.title}" height="80px">
@@ -564,11 +558,20 @@ function renderLibrary() {
                 <button id='button"><h2>-</h2></button>
             </div>
         `;
-     document.getElementById('button').addEventListener('click', function(){
-      usunPiosenke(song.title);
-     });
+     
     });
+
 }
+function usunPiosenke(title) {
+  let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+  playlist = playlist.filter((song) => song.title !== title);
+  localStorage.setItem('playlist', JSON.stringify(playlist));
+  renderLibrary();
+  console.log(`Usunięto piosenkę: ${title}`);
+}
+document.getElementById('button').addEventListener('click', function(){
+  usunPiosenke(song.title);
+ });
 
 
 
