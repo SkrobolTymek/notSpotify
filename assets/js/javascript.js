@@ -324,12 +324,12 @@ document.getElementById("home").addEventListener('click', function (){
       
 });
 document.getElementById('playerr').addEventListener('click', function () {
-  console.log("Kliknięto na playerr!"); // Debugowanie
+  console.log("Kliknięto na playerr!"); 
 
-  // Ustawienie marginesu strony
+
   document.querySelector('main').style.marginTop = '0px';
 
-  // Tworzenie nowej zawartości na stronie
+
   document.querySelector('main').innerHTML = `
     <section class="leftSectionMain">
         <div class="container"></div>
@@ -344,13 +344,13 @@ document.getElementById('playerr').addEventListener('click', function () {
         </section>
     </section>`;
 
-  // Kontener piosenek
+  
   let containerPiosenki = document.querySelector('.container');
-  console.log("Kontener piosenek załadowany:", containerPiosenki); // Debugowanie
+  console.log("Kontener piosenek załadowany:", containerPiosenki); 
 
-  // Ładowanie playlisty z localStorage
+
   let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-  containerPiosenki.innerHTML = "";  // Czyszczenie kontenera przed wstawieniem nowych piosenek
+  containerPiosenki.innerHTML = "";  
 
   playlist.forEach((song) => {
     containerPiosenki.innerHTML += `
@@ -363,18 +363,17 @@ document.getElementById('playerr').addEventListener('click', function () {
     `;
   });
 
-  // Po załadowaniu piosenek sprawdzamy dostępność elementów
   let piosenki = document.querySelectorAll(".piosenka");
-  console.log("Tablica piosenek:", piosenki); // Debugowanie
+  console.log("Tablica piosenek:", piosenki); 
 
   if (piosenki.length === 0) {
     console.log("Brak piosenek na stronie.");
   }
 
-  // Funkcja zmiany piosenek
+
   function zmianaPiosenek() {
     let wybranaPiosenka = document.querySelector("#wybranaPiosenka h2:first-of-type").textContent;
-    console.log("Wybrana piosenka:", wybranaPiosenka); // Debugowanie
+    console.log("Wybrana piosenka:", wybranaPiosenka);
 
     let songUrl = "";
     let opis = "";
@@ -434,11 +433,10 @@ document.getElementById('playerr').addEventListener('click', function () {
         break;
     }
 
-    // Logowanie w konsoli, czy są poprawne wartości
     console.log("Ścieżka piosenki:", songUrl);
     console.log("Opis piosenki:", opis);
 
-    // Wstawianie audio playera i opisu
+   
     let audioPlayer = document.querySelector(".audio-player");
     audioPlayer.innerHTML = `
       <audio controls id="background_audio1">
@@ -452,22 +450,20 @@ document.getElementById('playerr').addEventListener('click', function () {
     songInfo.innerHTML = `<h2>${opis}</h2>`;
   }
 
-  // Obsługuje kliknięcie na piosenki
   piosenki.forEach(function (piosenka) {
     piosenka.addEventListener("click", function () {
-      console.log("Kliknięto na piosenkę:", piosenka); // Debugowanie
-      // Resetowanie id innych piosenek
+      console.log("Kliknięto na piosenkę:", piosenka);
+    
       piosenki.forEach(function (song) {
         song.id = ""; 
       });
 
-      // Ustawianie id dla klikniętej piosenki
+    
       piosenka.id = "wybranaPiosenka"; 
-      zmianaPiosenek();  // Zmieniamy piosenkę i wyświetlamy audio playera
+      zmianaPiosenek(); 
     });
   });
 
-  // Wyświetlanie aktualnego czasu
   setInterval(showTime, 1000);
 
   function showTime() {
@@ -493,7 +489,7 @@ document.getElementById('playerr').addEventListener('click', function () {
     document.querySelector(".clock").innerHTML = `<h2>${currentTime}</h2>`;
   }
 
-  showTime();  // Natychmiastowe wyświetlenie czasu
+  showTime();  
 });
 
 
