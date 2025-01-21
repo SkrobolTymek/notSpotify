@@ -189,7 +189,7 @@ document.querySelector('main').innerHTML = `<div class="piosenki-container">
               playlist.push(song);
               localStorage.setItem('playlist', JSON.stringify(playlist));
               console.log(`Dodano piosenkę do playlisty: ${song.title}`);
-              renderLibrary(); // Call renderLibrary to update the library display
+              renderLibrary(); 
           } else {
               console.log(`Piosenka już istnieje: ${song.title}`);
           }
@@ -316,7 +316,7 @@ document.getElementById("home").addEventListener('click', function (){
               playlist.push(song);
               localStorage.setItem('playlist', JSON.stringify(playlist));
               console.log(`Dodano piosenkę do playlisty: ${song.title}`);
-              renderLibrary(); // Call renderLibrary to update the library display
+              renderLibrary(); 
           } else {
               console.log(`Piosenka już istnieje: ${song.title}`);
           }
@@ -324,8 +324,10 @@ document.getElementById("home").addEventListener('click', function (){
       
 });
 document.getElementById('playerr').addEventListener('click', function () {
+  // Ustawienie marginesu strony
   document.querySelector('main').style.marginTop = '0px';
 
+  // Tworzenie nowej zawartości na stronie
   document.querySelector('main').innerHTML = `
     <section class="leftSectionMain">
         <div class="container"></div>
@@ -340,17 +342,20 @@ document.getElementById('playerr').addEventListener('click', function () {
         </section>
     </section>`;
 
+  // Kontener piosenek
   let containerPiosenki = document.querySelector('.container');
+  
+  // Tablica piosenek
   let piosenki = document.querySelectorAll(".piosenka");
 
-  // Funkcja zmiany piosenki
+  // Funkcja zmiany piosenek
   function zmianaPiosenek() {
     let wybranaPiosenka = document.querySelector("#wybranaPiosenka h2:first-of-type").textContent;
+    console.log("Wybrana piosenka:", wybranaPiosenka); // Debugowanie
 
     let songUrl = "";
     let opis = "";
 
-    // Dopasowanie URL i opisu na podstawie tytułu piosenki
     switch (wybranaPiosenka) {
       case "Feel Good Inc ":
         songUrl = "assets/Audio/Fgi.mp3";
@@ -405,6 +410,10 @@ document.getElementById('playerr').addEventListener('click', function () {
         opis = "CHOOSE A SONG";
         break;
     }
+
+    // Logowanie w konsoli, czy są poprawne wartości
+    console.log("Ścieżka piosenki:", songUrl);
+    console.log("Opis piosenki:", opis);
 
     // Wstawianie audio playera i opisu
     let audioPlayer = document.querySelector(".audio-player");
@@ -479,12 +488,13 @@ document.getElementById('playerr').addEventListener('click', function () {
 });
 
 
-     // Funkcja usuwania piosenki na poziomie globalnym
+
+     
 function usunPiosenke(title) {
   let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
   playlist = playlist.filter((song) => song.title !== title);
   localStorage.setItem('playlist', JSON.stringify(playlist));
-  renderLibrary(); // Odświeżenie playlisty po usunięciu piosenki
+  renderLibrary(); 
   console.log(`Usunięto piosenkę: ${title}`);
 }
 
@@ -492,7 +502,7 @@ function renderLibrary() {
   let libraryContainer = document.querySelector(".library-container");
   let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
 
-  libraryContainer.innerHTML = ""; // Czyszczenie kontenera przed wyświetleniem nowych piosenek
+  libraryContainer.innerHTML = ""; 
 
   playlist.forEach((song) => {
     libraryContainer.innerHTML += `
@@ -507,11 +517,11 @@ function renderLibrary() {
   });
 }
 
-// Przypisanie akcji do kliknięcia na zakładkę "librarynav"
+
 document.getElementById("librarynav").addEventListener('click', function () {
   document.querySelector('main').style.marginTop = '0px';
   document.querySelector('main').innerHTML = `<div class="library-container"></div>`;
 
-  renderLibrary(); // Wyświetlanie piosenek po kliknięciu na zakładkę
+  renderLibrary(); 
 });
 
