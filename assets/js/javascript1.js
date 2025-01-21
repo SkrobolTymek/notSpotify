@@ -18,6 +18,7 @@ function pobierz(button) {
         playlist.push(song);
         localStorage.setItem('playlist', JSON.stringify(playlist));
         console.log(`Dodano piosenkę do playlisty: ${song.title}`);
+        renderLibrary(); // Call renderLibrary to update the library display
     } else {
         console.log(`Piosenka już istnieje: ${song.title}`);
     }
