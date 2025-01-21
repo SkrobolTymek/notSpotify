@@ -1,3 +1,228 @@
+document.querySelector('main').innerHTML = `<div class="piosenki-container">
+            <div class="piosenkap">
+                <img src="assets/images/FeelGoodIncGorillaz.jpg" height="80px" alt="">
+                <h2>Feel Good Inc </h2>
+                <h2 class="name">Gorillaz</h2>
+                <h2 class="time">4:13</h2>
+                <button class="plus-btn" onclick="pobierz(this)"> +</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/ClintEastwoodGorillaz.jpg" height="80px" alt="">
+                <h2>Clint Eastwood </h2>
+                <h2 class="name">Gorillaz</h2>
+                <h2 class="time">4:29</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/FooFightersLearnToFly.jpg" height="80px" alt="">
+                <h2>Learn To Fly </h2>
+                <h2 class="name">Foo Fighters</h2>
+                <h2 class="time">4:37</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/HolyWarsThePunishmentDue.jpg" height="80px" alt="">
+                <h2>Holy Wars... The Punishment Due</h2>
+                <h2 class="name">Megadeth</h2>
+                <h2 class="time">6:38</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/InBloom.webp" height="80px" alt="">
+                <h2>In Bloom </h2>
+                <h2 class="name">Nirvana</h2>
+                <h2 class="time">4:58</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/MetallicaCallOfKtulu.jpg" height="80px" alt="">
+                <h2>Call of Ktulu</h2>
+                <h2 class="name">Metallica</h2>
+                <h2 class="time">8:56</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/NirvanaDrainYou.jpg" height="80px" alt="">
+                <h2>Drain You</h2>
+                <h2 class="name">Nirvana</h2>
+                <h2 class="time">3:44</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/RainingBloodSlayer.jpg" height="80px" alt="">
+                <h2>Raining Blood</h2>
+                <h2 class="name">Slayer</h2>
+                <h2 class="time">4:18</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/RepentlessSlayer.jpg" height="80px" alt="">
+                <h2>Repentless</h2>
+                <h2 class="name">Slayer</h2>
+                <h2 class="time">4:37</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/SmellsLikeTeenSpiritNirvana.jpg" height="80px" alt="">
+                <h2>Smells like teen spirit</h2>
+                <h2 class="name">Nirvana</h2>
+                <h2 class="time">4:39</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/TheOffspringPrettyFlyforaWhiteGuy.jpg" height="80px" alt="">
+                <h2>Pretty Fly for a White Guy </h2>
+                <h2 class="name">The Offspring</h2>
+                <h2 class="time">3:13</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/TornadoOfSoulsMegadeth.jpg" height="80px" alt="">
+                <h2>Tornado of Souls </h2>
+                <h2 class="name">Megadeth</h2>
+                <h2 class="time">5:20</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+        </div>`;
+
+
+document.getElementById("home").addEventListener('click', function (){
+  document.querySelector('main').innerHTML = `<div class="piosenki-container">
+            <div class="piosenkap">
+                <img src="assets/images/FeelGoodIncGorillaz.jpg" height="80px" alt="">
+                <h2>Feel Good Inc </h2>
+                <h2 class="name">Gorillaz</h2>
+                <h2 class="time">4:13</h2>
+                <button class="plus-btn" onclick="pobierz(this)"> +</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/ClintEastwoodGorillaz.jpg" height="80px" alt="">
+                <h2>Clint Eastwood </h2>
+                <h2 class="name">Gorillaz</h2>
+                <h2 class="time">4:29</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/FooFightersLearnToFly.jpg" height="80px" alt="">
+                <h2>Learn To Fly </h2>
+                <h2 class="name">Foo Fighters</h2>
+                <h2 class="time">4:37</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/HolyWarsThePunishmentDue.jpg" height="80px" alt="">
+                <h2>Holy Wars... The Punishment Due</h2>
+                <h2 class="name">Megadeth</h2>
+                <h2 class="time">6:38</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/InBloom.webp" height="80px" alt="">
+                <h2>In Bloom </h2>
+                <h2 class="name">Nirvana</h2>
+                <h2 class="time">4:58</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/MetallicaCallOfKtulu.jpg" height="80px" alt="">
+                <h2>Call of Ktulu</h2>
+                <h2 class="name">Metallica</h2>
+                <h2 class="time">8:56</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/NirvanaDrainYou.jpg" height="80px" alt="">
+                <h2>Drain You</h2>
+                <h2 class="name">Nirvana</h2>
+                <h2 class="time">3:44</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/RainingBloodSlayer.jpg" height="80px" alt="">
+                <h2>Raining Blood</h2>
+                <h2 class="name">Slayer</h2>
+                <h2 class="time">4:18</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/RepentlessSlayer.jpg" height="80px" alt="">
+                <h2>Repentless</h2>
+                <h2 class="name">Slayer</h2>
+                <h2 class="time">4:37</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/SmellsLikeTeenSpiritNirvana.jpg" height="80px" alt="">
+                <h2>Smells like teen spirit</h2>
+                <h2 class="name">Nirvana</h2>
+                <h2 class="time">4:39</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/TheOffspringPrettyFlyforaWhiteGuy.jpg" height="80px" alt="">
+                <h2>Pretty Fly for a White Guy </h2>
+                <h2 class="name">The Offspring</h2>
+                <h2 class="time">3:13</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+    
+            <div class="piosenkap">
+                <img src="assets/images/TornadoOfSoulsMegadeth.jpg" height="80px" alt="">
+                <h2>Tornado of Souls </h2>
+                <h2 class="name">Megadeth</h2>
+                <h2 class="time">5:20</h2>
+                <button class="plus-btn" onclick="pobierz(this)">+</button>
+            </div>
+        </div>`;
+});
+document.getElementById('playerr').addEventListener('click', function (){
+  document.querySelector('main').innerHTML = `<section class="leftSectionMain">
+            <div class="container">
+            
+        </div>
+        </section>
+        <section class="rightSectionMain">
+            <section class="play">
+                <div class="audio-player">
+                    
+                </div>
+            </section>
+            <section class="bottomTwoDivs">
+                <div class="songInfo">
+                    
+                </div>
+                <div class="clock">
+                    0:00:00
+                </div>
+            </section>
+        </section>`
+});
+
+document.getElementById("librarynav").addEventListener('click', function (){
+ document.querySelector('main').innerHTML = ` <div class="library-container"></div>`
+});
+
 let piosenka1 = `<div class="piosenka">
                 <img src="assets/images/FeelGoodIncGorillaz.jpg" height="80px" alt="">
                 <h2>Feel Good Inc </h2>
