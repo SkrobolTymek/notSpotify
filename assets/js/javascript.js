@@ -236,12 +236,16 @@ function showTime() {
 
 showTime();
 
+// Pobieranie danych z LocalStorage
+let songTitle = localStorage.getItem('selectedSong');
 
-document.querySelectorAll('.plus-btn').forEach(button => {
-    button.addEventListener('click', function () {
-       
-        let parent = this.closest('.piosenkap');
-        let songTitle = parent.querySelector('h2:first-of-type');
-        console.log(songTitle.textContent);  
-    });
-});
+// Sprawdzanie, czy tytuł istnieje
+if (songTitle) {
+    console.log(`Odczytany tytuł piosenki: ${songTitle}`);
+    // Możesz tutaj użyć `songTitle` według potrzeby
+} else {
+    console.log('Brak wybranego tytułu piosenki w LocalStorage.');
+}
+
+
+
