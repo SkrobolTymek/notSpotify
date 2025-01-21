@@ -114,21 +114,6 @@ if (songTitle) {
 }
 
 
-
-let piosenki = document.querySelectorAll(".piosenka");
-
-piosenki.forEach(function (piosenka) {
-  piosenka.addEventListener("click", function () {
-    piosenki.forEach(function () {
-      piosenka.id = "";
-    });
-
-    piosenka.id = "wybranaPiosenka";
-
-    zmianaPiosenek();
-  });
-});
-
 function zmianaPiosenek() {
   let wybranaPiosenka = document.querySelector(
     "#wybranaPiosenka h2:first-of-type"
@@ -233,6 +218,18 @@ function zmianaPiosenek() {
       opis = "CHOOSE A SONG";
       break;
   }
+
+let piosenki = document.querySelectorAll(".piosenka");
+piosenki.forEach(function (piosenka) {
+  piosenka.addEventListener("click", function () {
+    piosenki.forEach(function () {
+      piosenka.id = ""; // Resetowanie ID wszystkich elementów
+    });
+    piosenka.id = "wybranaPiosenka"; // Ustawienie ID na kliknięty element
+    zmianaPiosenek(); // Wywołanie funkcji zmiany
+  });
+});
+
 
   let audioPlayer = document.querySelector(".audio-player");
   audioPlayer.innerHTML = `
