@@ -64,11 +64,11 @@ nav li:hover{
 }
 .library-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* To już było, ale upewnij się, że kontener nie ma za małej szerokości */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
     padding: 20px;
-    max-width: 100%; /* Upewnij się, że kontener nie przekroczy szerokości */
-    box-sizing: border-box; /* Zapewnia, że padding nie wpływa na wymiary kontenera */
+    max-width: 100%; 
+    box-sizing: border-box; 
 }
 
 .library-song {
@@ -85,7 +85,7 @@ nav li:hover{
 }
 
 .library-song:hover {
-    transform: scale(1.05); /* Powiększenie po najechaniu */
+    transform: scale(1.05); 
 }
 
 .library-song img {
@@ -122,4 +122,21 @@ nav li:hover{
 
 .library-song button:focus {
     outline: none;
+}
+@media (max-width: 1200px) {
+    .library-container {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 900px) {
+    .library-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 600px) {
+    .library-container {
+        grid-template-columns: 1fr; 
+    }
 }

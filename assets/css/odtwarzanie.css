@@ -184,3 +184,48 @@ background-color: #444444;
     scale: 1.1;
     background-color: #444444;
 }
+@media (max-width: 1200px) {
+    .piosenki-container {
+        width: 80%; 
+    }
+
+    .piosenka img {
+        width: 45px; 
+        height: 45px;
+    }
+}
+
+@media (max-width: 900px) {
+    .piosenki-container {
+        width: 100%;
+    }
+
+    .piosenka img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .piosenka {
+        flex-direction: column; 
+        align-items: center; 
+    }
+}
+
+@media (max-width: 600px) {
+    .piosenki-container {
+        padding: 10px;
+    }
+
+    .piosenka {
+        padding: 10px;
+    }
+
+    .piosenka img {
+        width: 35px; 
+        height: 35px;
+    }
+
+    .piosenka h2 {
+        font-size: 14px; 
+    }
+}
