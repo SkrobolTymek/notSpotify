@@ -235,3 +235,13 @@ function showTime() {
 }
 
 showTime();
+
+
+document.querySelectorAll('.plus-btn').forEach(button => {
+    button.addEventListener('click', function () {
+       
+        let parent = this.closest('.piosenkap');
+        let songTitle = parent.querySelector('h2:first-of-type');
+        console.log(songTitle.textContent);  
+    });
+});
