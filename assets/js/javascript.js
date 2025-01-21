@@ -70,12 +70,16 @@ let piosenka12 = `<div class="piosenka">
                 <h2 class="name"> Megadeth </h2>
                 <h2 class="time">5:20</h2>
             </div>`;
+            
 
-let containerPiosenki = document.querySelector(".container");
+let containerPiosenki = document.querySelector('.container');
 // containerPiosenki.innerHTML = `${piosenka1}${piosenka2}${piosenka3}${piosenka4}${piosenka5}${piosenka6}${piosenka7}${piosenka8}${piosenka9}${piosenka10}${piosenka11}${piosenka12}`;
 
 // Pobieranie danych z LocalStorage
 let songTitle = localStorage.getItem('selectedSong');
+
+
+console.log(localStorage.getItem('playlist'));
 
 // Sprawdzanie, czy tytuł istnieje
 if (songTitle) {
