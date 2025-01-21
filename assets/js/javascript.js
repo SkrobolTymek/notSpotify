@@ -324,6 +324,8 @@ document.getElementById("home").addEventListener('click', function (){
       
 });
 document.getElementById('playerr').addEventListener('click', function () {
+  console.log("Kliknięto na playerr!"); // Sprawdzamy, czy click działa
+
   // Ustawienie marginesu strony
   document.querySelector('main').style.marginTop = '0px';
 
@@ -344,9 +346,15 @@ document.getElementById('playerr').addEventListener('click', function () {
 
   // Kontener piosenek
   let containerPiosenki = document.querySelector('.container');
-  
+  console.log("Kontener piosenek załadowany:", containerPiosenki); // Sprawdzamy, czy kontener jest poprawnie wyświetlany
+
   // Tablica piosenek
   let piosenki = document.querySelectorAll(".piosenka");
+  console.log("Tablica piosenek:", piosenki); // Debugowanie - sprawdzamy, czy mamy elementy o klasie 'piosenka'
+
+  if (piosenki.length === 0) {
+    console.log("Brak piosenek na stronie.");
+  }
 
   // Funkcja zmiany piosenek
   function zmianaPiosenek() {
@@ -432,6 +440,7 @@ document.getElementById('playerr').addEventListener('click', function () {
   // Obsługuje kliknięcie na piosenki
   piosenki.forEach(function (piosenka) {
     piosenka.addEventListener("click", function () {
+      console.log("Kliknięto na piosenkę:", piosenka); // Debugowanie
       // Resetowanie id innych piosenek
       piosenki.forEach(function (song) {
         song.id = ""; 
@@ -486,6 +495,7 @@ document.getElementById('playerr').addEventListener('click', function () {
 
   showTime();  // Natychmiastowe wyświetlenie czasu
 });
+
 
 
 
