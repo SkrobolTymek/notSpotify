@@ -324,7 +324,7 @@ document.getElementById("home").addEventListener('click', function (){
       
 });
 document.getElementById('playerr').addEventListener('click', function () {
-  console.log("Kliknięto na playerr!"); // Sprawdzamy, czy click działa
+  console.log("Kliknięto na playerr!"); // Debugowanie
 
   // Ustawienie marginesu strony
   document.querySelector('main').style.marginTop = '0px';
@@ -346,11 +346,26 @@ document.getElementById('playerr').addEventListener('click', function () {
 
   // Kontener piosenek
   let containerPiosenki = document.querySelector('.container');
-  console.log("Kontener piosenek załadowany:", containerPiosenki); // Sprawdzamy, czy kontener jest poprawnie wyświetlany
+  console.log("Kontener piosenek załadowany:", containerPiosenki); // Debugowanie
 
-  // Tablica piosenek
+  // Ładowanie playlisty z localStorage
+  let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+  containerPiosenki.innerHTML = "";  // Czyszczenie kontenera przed wstawieniem nowych piosenek
+
+  playlist.forEach((song) => {
+    containerPiosenki.innerHTML += `
+      <div class="piosenka">
+          <img src="${song.image}" alt="${song.title}" height="80px">
+          <h2>${song.title}</h2>
+          <h2 class="name">${song.artist}</h2>
+          <h2 class="time">${song.duration}</h2>
+      </div>
+    `;
+  });
+
+  // Po załadowaniu piosenek sprawdzamy dostępność elementów
   let piosenki = document.querySelectorAll(".piosenka");
-  console.log("Tablica piosenek:", piosenki); // Debugowanie - sprawdzamy, czy mamy elementy o klasie 'piosenka'
+  console.log("Tablica piosenek:", piosenki); // Debugowanie
 
   if (piosenki.length === 0) {
     console.log("Brak piosenek na stronie.");
@@ -450,21 +465,6 @@ document.getElementById('playerr').addEventListener('click', function () {
       piosenka.id = "wybranaPiosenka"; 
       zmianaPiosenek();  // Zmieniamy piosenkę i wyświetlamy audio playera
     });
-  });
-
-  // Ładowanie playlisty z localStorage
-  let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-  containerPiosenki.innerHTML = "";  // Czyszczenie kontenera przed wstawieniem nowych piosenek
-
-  playlist.forEach((song) => {
-    containerPiosenki.innerHTML += `
-      <div class="piosenka">
-          <img src="${song.image}" alt="${song.title}" height="80px">
-          <h2>${song.title}</h2>
-          <h2 class="name">${song.artist}</h2>
-          <h2 class="time">${song.duration}</h2>
-      </div>
-    `;
   });
 
   // Wyświetlanie aktualnego czasu
