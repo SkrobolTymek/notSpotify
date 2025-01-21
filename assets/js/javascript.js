@@ -1,3 +1,77 @@
+let piosenka1 = `<div class="piosenka">
+                <img src="assets/images/FeelGoodIncGorillaz.jpg" height="80px" alt="">
+                <h2>Feel Good Inc </h2>
+                <h2 class="name"> Gorillaz </h2>
+                <h2 class="time">4:13</h2>
+            </div>`;
+let piosenka2 = ` <div class="piosenka">
+                <img src="assets/images/ClintEastwoodGorillaz.jpg" height="80px" alt="">
+                <h2>Clint Eastwood </h2>
+                <h2 class="name"> Gorillaz </h2>
+                <h2 class="time">4:29</h2>
+            </div>`;
+let piosenka3 = ` <div class="piosenka">
+                <img src="assets/images/FooFightersLearnToFly.jpg" height="80px" alt="">
+                <h2>Learn To Fly </h2>
+                <h2 class="name"> Foo Fighters </h2>
+                <h2 class="time">4:37</h2>
+            </div>`;
+let piosenka4 = `<div class="piosenka">
+                <img src="assets/images/HolyWarsThePunishmentDue.jpg" height="80px" alt="">
+                <h2>Holy Wars... The Punishment Due</h2>
+                <h2 class="name"> Megadeth </h2>
+                <h2 class="time">6:38</h2>
+            </div>`;
+let piosenka5 = `<div class="piosenka">
+                <img src="assets/images/InBloom.webp" height="80px" alt="">
+                <h2>In bloom </h2>
+                <h2 class="name"> Nirvana </h2>
+                <h2 class="time">4:58</h2>
+            </div>`;
+let piosenka6 = `<div class="piosenka">
+                <img src="assets/images/MetallicaCallOfKtulu.jpg" height="80px" alt="">
+                <h2>Call of Ktulu</h2>
+                <h2 class="name"> Metallica </h2>
+                <h2 class="time">8:56</h2>
+            </div>`;
+let piosenka7 = `<div class="piosenka">
+                <img src="assets/images/NirvanaDrainYou.jpg" height="80px" alt="">
+                <h2>Drain You</h2>
+                <h2 class="name">Nirvana</h2>
+                <h2 class="time">3:44</h2>
+            </div>`;
+let piosenka8 = ` <div class="piosenka">
+                <img src="assets/images/RainingBloodSlayer.jpg" height="80px" alt="">
+                <h2>Raining Blood</h2>
+                <h2 class="name">Slayer</h2>
+                <h2 class="time">4:18</h2>
+            </div>`;
+let piosenka9 = ` <div class="piosenka">
+                <img src="assets/images/RepentlessSlayer.jpg" height="80px" alt="">
+                <h2>Repentless</h2>
+                <h2 class="name">Slayer</h2>
+                <h2 class="time">4:37</h2>
+            </div>`;
+let piosenka10 = `<div class="piosenka">
+                <img src="assets/images/SmellsLikeTeenSpiritNirvana.jpg" height="80px" alt="">
+                <h2>Smells like teen spirit</h2>
+                <h2 class="name"> Nirvana </h2>
+                <h2 class="time">4:39</h2>
+            </div>`;
+let piosenka11 = ` <div class="piosenka">
+                <img src="assets/images/TheOffspringPrettyFlyforaWhiteGuy.jpg" height="80px" alt="">
+                <h2>Pretty Fly for a white guy </h2>
+                <h2 class="name"> The offspring </h2>
+                <h2 class="time">3:13</h2>
+            </div>`;
+let piosenka12 = `<div class="piosenka">
+                <img src="assets/images/TornadoOfSoulsMegadeth.jpg" height="80px" alt="">
+                <h2>Tornado of Souls </h2>
+                <h2 class="name"> Megadeth </h2>
+                <h2 class="time">5:20</h2>
+            </div>`;
+            
+
 document.querySelector('main').innerHTML = `<div class="piosenki-container">
             <div class="piosenkap">
                 <img src="assets/images/FeelGoodIncGorillaz.jpg" height="80px" alt="">
@@ -272,158 +346,9 @@ document.getElementById('playerr').addEventListener('click', function (){
                 </div>
             </section>
         </section>`
-    
-      });
+        let containerPiosenki = document.querySelector('.container');
 
-document.getElementById("librarynav").addEventListener('click', function (){
-  document.querySelector('main').style.marginTop = '0px';
-
- document.querySelector('main').innerHTML = ` <div class="library-container"></div>`
-  function usunPiosenke(title) {
-    let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-    playlist = playlist.filter((song) => song.title !== title);
-    localStorage.setItem('playlist', JSON.stringify(playlist)); 
-    renderLibrary(); 
-    console.log(`Usunięto piosenkę: ${title}`);
-}
-
-function renderLibrary() {
-    let libraryContainer = document.querySelector(".library-container");
-    let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-
-    libraryContainer.innerHTML = "";
-
-    playlist.forEach((song) => {
-        libraryContainer.innerHTML += `
-            <div class="library-song">
-                <img src="${song.image}" alt="${song.title}" height="80px">
-                <h2>${song.title}</h2>
-                <h3>${song.artist}</h3>
-                <h4>${song.duration}</h4>
-                <button onclick="usunPiosenke('${song.title}')"><h2>-</h2></button>
-            </div>
-        `;
-    });
-}
-
-document.addEventListener("DOMContentLoaded", renderLibrary);
-
-  
-});
-
-let piosenka1 = `<div class="piosenka">
-                <img src="assets/images/FeelGoodIncGorillaz.jpg" height="80px" alt="">
-                <h2>Feel Good Inc </h2>
-                <h2 class="name"> Gorillaz </h2>
-                <h2 class="time">4:13</h2>
-            </div>`;
-let piosenka2 = ` <div class="piosenka">
-                <img src="assets/images/ClintEastwoodGorillaz.jpg" height="80px" alt="">
-                <h2>Clint Eastwood </h2>
-                <h2 class="name"> Gorillaz </h2>
-                <h2 class="time">4:29</h2>
-            </div>`;
-let piosenka3 = ` <div class="piosenka">
-                <img src="assets/images/FooFightersLearnToFly.jpg" height="80px" alt="">
-                <h2>Learn To Fly </h2>
-                <h2 class="name"> Foo Fighters </h2>
-                <h2 class="time">4:37</h2>
-            </div>`;
-let piosenka4 = `<div class="piosenka">
-                <img src="assets/images/HolyWarsThePunishmentDue.jpg" height="80px" alt="">
-                <h2>Holy Wars... The Punishment Due</h2>
-                <h2 class="name"> Megadeth </h2>
-                <h2 class="time">6:38</h2>
-            </div>`;
-let piosenka5 = `<div class="piosenka">
-                <img src="assets/images/InBloom.webp" height="80px" alt="">
-                <h2>In bloom </h2>
-                <h2 class="name"> Nirvana </h2>
-                <h2 class="time">4:58</h2>
-            </div>`;
-let piosenka6 = `<div class="piosenka">
-                <img src="assets/images/MetallicaCallOfKtulu.jpg" height="80px" alt="">
-                <h2>Call of Ktulu</h2>
-                <h2 class="name"> Metallica </h2>
-                <h2 class="time">8:56</h2>
-            </div>`;
-let piosenka7 = `<div class="piosenka">
-                <img src="assets/images/NirvanaDrainYou.jpg" height="80px" alt="">
-                <h2>Drain You</h2>
-                <h2 class="name">Nirvana</h2>
-                <h2 class="time">3:44</h2>
-            </div>`;
-let piosenka8 = ` <div class="piosenka">
-                <img src="assets/images/RainingBloodSlayer.jpg" height="80px" alt="">
-                <h2>Raining Blood</h2>
-                <h2 class="name">Slayer</h2>
-                <h2 class="time">4:18</h2>
-            </div>`;
-let piosenka9 = ` <div class="piosenka">
-                <img src="assets/images/RepentlessSlayer.jpg" height="80px" alt="">
-                <h2>Repentless</h2>
-                <h2 class="name">Slayer</h2>
-                <h2 class="time">4:37</h2>
-            </div>`;
-let piosenka10 = `<div class="piosenka">
-                <img src="assets/images/SmellsLikeTeenSpiritNirvana.jpg" height="80px" alt="">
-                <h2>Smells like teen spirit</h2>
-                <h2 class="name"> Nirvana </h2>
-                <h2 class="time">4:39</h2>
-            </div>`;
-let piosenka11 = ` <div class="piosenka">
-                <img src="assets/images/TheOffspringPrettyFlyforaWhiteGuy.jpg" height="80px" alt="">
-                <h2>Pretty Fly for a white guy </h2>
-                <h2 class="name"> The offspring </h2>
-                <h2 class="time">3:13</h2>
-            </div>`;
-let piosenka12 = `<div class="piosenka">
-                <img src="assets/images/TornadoOfSoulsMegadeth.jpg" height="80px" alt="">
-                <h2>Tornado of Souls </h2>
-                <h2 class="name"> Megadeth </h2>
-                <h2 class="time">5:20</h2>
-            </div>`;
-            
-
-let containerPiosenki = document.querySelector('.container');
-
-let songTitle = localStorage.getItem('selectedSong');
-
-
-console.log(localStorage.getItem('playlist'));
-
-if (songTitle) {
-    console.log(`Odczytany tytuł piosenki: ${songTitle}`);
-} else {
-    console.log('Brak wybranego tytułu piosenki w LocalStorage.');
-}
-
-
-  let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-
-   document.querySelector('.container').innerHTML = ""; 
-  playlist.forEach((song) => {
-        document.querySelector('.container').innerHTML += `
-          <div class="piosenka">
-              <img src="${song.image}" alt="${song.title}" height="80px">
-              <h2>${song.title}</h2>
-              <h2 class="name">${song.artist}</h2>
-              <h2 class="time">${song.duration}</h2>
-          </div>
-      `;
-  });
-
-  function usunPiosenke(title) {
-    let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-    playlist = playlist.filter((song) => song.title !== title);
-    localStorage.setItem('playlist', JSON.stringify(playlist));
-    renderPlaylist();
-    console.log(`Usunięto piosenkę: ${title}`);
-}
-
-
-
-let piosenki = document.querySelectorAll(".piosenka");
+        let piosenki = document.querySelectorAll(".piosenka");
 piosenki.forEach(function (piosenka) {
   piosenka.addEventListener("click", function () {
     piosenki.forEach(function () {
@@ -433,7 +358,6 @@ piosenki.forEach(function (piosenka) {
     zmianaPiosenek(); 
   });
 });
-
 function zmianaPiosenek() {
   let wybranaPiosenka = document.querySelector(
     "#wybranaPiosenka h2:first-of-type"
@@ -553,7 +477,32 @@ function zmianaPiosenek() {
     <h2>${opis}</h2>
     `;
 }
-
+        let songTitle = localStorage.getItem('selectedSong');
+        
+        
+        console.log(localStorage.getItem('playlist'));
+        
+        if (songTitle) {
+            console.log(`Odczytany tytuł piosenki: ${songTitle}`);
+        } else {
+            console.log('Brak wybranego tytułu piosenki w LocalStorage.');
+        }
+        
+        
+          let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+        
+           document.querySelector('.container').innerHTML = ""; 
+          playlist.forEach((song) => {
+                document.querySelector('.container').innerHTML += `
+                  <div class="piosenka">
+                      <img src="${song.image}" alt="${song.title}" height="80px">
+                      <h2>${song.title}</h2>
+                      <h2 class="name">${song.artist}</h2>
+                      <h2 class="time">${song.duration}</h2>
+                  </div>
+              `;
+          });
+          
 setInterval(showTime, 1000);
 
 function showTime() {
@@ -582,4 +531,52 @@ function showTime() {
 }
 
 showTime();
+
+      });
+
+document.getElementById("librarynav").addEventListener('click', function (){
+  document.querySelector('main').style.marginTop = '0px';
+
+ document.querySelector('main').innerHTML = ` <div class="library-container"></div>`
+  function usunPiosenke(title) {
+    let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+    playlist = playlist.filter((song) => song.title !== title);
+    localStorage.setItem('playlist', JSON.stringify(playlist)); 
+    renderLibrary(); 
+    console.log(`Usunięto piosenkę: ${title}`);
+}
+
+function renderLibrary() {
+    let libraryContainer = document.querySelector(".library-container");
+    let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+
+    libraryContainer.innerHTML = "";
+
+    playlist.forEach((song) => {
+        libraryContainer.innerHTML += `
+            <div class="library-song">
+                <img src="${song.image}" alt="${song.title}" height="80px">
+                <h2>${song.title}</h2>
+                <h3>${song.artist}</h3>
+                <h4>${song.duration}</h4>
+                <button onclick="usunPiosenke('${song.title}')"><h2>-</h2></button>
+            </div>
+        `;
+    });
+}
+
+function usunPiosenke(title) {
+  let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+  playlist = playlist.filter((song) => song.title !== title);
+  localStorage.setItem('playlist', JSON.stringify(playlist));
+  renderPlaylist();
+  console.log(`Usunięto piosenkę: ${title}`);
+}
+
+document.addEventListener("DOMContentLoaded", renderLibrary);
+
+  
+});
+
+
 
