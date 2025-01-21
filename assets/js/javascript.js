@@ -90,25 +90,20 @@ if (songTitle) {
 }
 
 
-
-function renderPlaylist() {
-  let playerContainer = document.querySelector(".container");
   let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
 
-  playerContainer.innerHTML = ""; // Czyszczenie listy
+   document.querySelector('.container').innerHTML = ""; // Czyszczenie listy
 
   playlist.forEach((song) => {
         document.querySelector('.container').innerHTML += `
           <div class="piosenka">
               <img src="${song.image}" alt="${song.title}" height="80px">
               <h2>${song.title}</h2>
-              <h3>${song.artist}</h3>
-              <h4>${song.duration}</h4>
-              <button onclick="usunPiosenke('${song.title}')">Usuń</button>
+              <h2 class="name">${song.artist}</h2>
+              <h2 class="time">${song.duration}</h2>
           </div>
       `;
   });
-}
 
   function usunPiosenke(title) {
     let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
