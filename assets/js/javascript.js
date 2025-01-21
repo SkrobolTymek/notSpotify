@@ -119,8 +119,8 @@ let piosenki = document.querySelectorAll(".piosenka");
 
 piosenki.forEach(function (piosenka) {
   piosenka.addEventListener("click", function () {
-    piosenki.forEach(function (p) {
-      p.id = "";
+    piosenki.forEach(function () {
+      piosenka.id = "";
     });
 
     piosenka.id = "wybranaPiosenka";
