@@ -72,7 +72,34 @@ let piosenka12 = `<div class="piosenka">
             </div>`;
 
 let containerPiosenki = document.querySelector(".container");
-containerPiosenki.innerHTML = `${piosenka1}${piosenka2}${piosenka3}${piosenka4}${piosenka5}${piosenka6}${piosenka7}${piosenka8}${piosenka9}${piosenka10}${piosenka11}${piosenka12}`;
+// containerPiosenki.innerHTML = `${piosenka1}${piosenka2}${piosenka3}${piosenka4}${piosenka5}${piosenka6}${piosenka7}${piosenka8}${piosenka9}${piosenka10}${piosenka11}${piosenka12}`;
+
+// Pobieranie danych z LocalStorage
+let songTitle = localStorage.getItem('selectedSong');
+
+// Sprawdzanie, czy tytuł istnieje
+if (songTitle) {
+    console.log(`Odczytany tytuł piosenki: ${songTitle}`);
+    // Możesz tutaj użyć `songTitle` według potrzeby
+} else {
+    console.log('Brak wybranego tytułu piosenki w LocalStorage.');
+}
+
+
+
+function renderPlaylist() {
+  playerContainer.innerHTML = "";
+  storedSongs.forEach((song) => {
+      playerContainer.innerHTML += `
+          <div class="player-song" data-id="${song.id}">
+              <img src="${song.imgSrc}" alt="${song.title}" height="80px">
+              <h2>${song.title}</h2>
+              <h3>${song.artist}</h3>
+              <button class="play-button">Odtwórz</button>
+          </div>
+      `;
+  })}
+
 
 let piosenki = document.querySelectorAll(".piosenka");
 
@@ -235,17 +262,4 @@ function showTime() {
 }
 
 showTime();
-
-// Pobieranie danych z LocalStorage
-let songTitle = localStorage.getItem('selectedSong');
-
-// Sprawdzanie, czy tytuł istnieje
-if (songTitle) {
-    console.log(`Odczytany tytuł piosenki: ${songTitle}`);
-    // Możesz tutaj użyć `songTitle` według potrzeby
-} else {
-    console.log('Brak wybranego tytułu piosenki w LocalStorage.');
-}
-
-
 
