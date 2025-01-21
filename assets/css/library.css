@@ -64,9 +64,11 @@ nav li:hover{
 }
 .library-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* To już było, ale upewnij się, że kontener nie ma za małej szerokości */
     gap: 20px;
     padding: 20px;
+    max-width: 100%; /* Upewnij się, że kontener nie przekroczy szerokości */
+    box-sizing: border-box; /* Zapewnia, że padding nie wpływa na wymiary kontenera */
 }
 
 .library-song {
@@ -79,6 +81,11 @@ nav li:hover{
     text-align: center;
     position: relative;
     overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.library-song:hover {
+    transform: scale(1.05); /* Powiększenie po najechaniu */
 }
 
 .library-song img {

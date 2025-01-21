@@ -396,7 +396,7 @@ document.getElementById('playerr').addEventListener('click', function () {
         songUrl = "assets/Audio/Hwtpd.mp3";
         opis = "Holy Wars... The Punishment Due by Megadeth is a fast-paced thrash metal epic that addresses political and religious conflict...";
         break;
-      case "In bloom ":
+      case "In bloom":
         songUrl = "assets/Audio/Ib.mp3";
         opis = "In Bloom by Nirvana is a grunge rock song that contrasts catchy, melodic elements with deeper, more introspective lyrics...";
         break;
