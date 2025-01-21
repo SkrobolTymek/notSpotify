@@ -95,9 +95,10 @@ document.querySelector('main').innerHTML = `<div class="piosenki-container">
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
             </div>
         </div>`;
-
+document.querySelector('main').style.marginTop = '200px';
 
 document.getElementById("home").addEventListener('click', function (){
+  document.querySelector('main').style.marginTop = '200px';
   document.querySelector('main').innerHTML = `<div class="piosenki-container">
             <div class="piosenkap">
                 <img src="assets/images/FeelGoodIncGorillaz.jpg" height="80px" alt="">
@@ -197,6 +198,8 @@ document.getElementById("home").addEventListener('click', function (){
         </div>`;
 });
 document.getElementById('playerr').addEventListener('click', function (){
+  document.querySelector('main').style.marginTop = 'auto';
+
   document.querySelector('main').innerHTML = `<section class="leftSectionMain">
             <div class="container">
             
@@ -220,6 +223,8 @@ document.getElementById('playerr').addEventListener('click', function (){
 });
 
 document.getElementById("librarynav").addEventListener('click', function (){
+  document.querySelector('main').style.marginTop = 'auto';
+
  document.querySelector('main').innerHTML = ` <div class="library-container"></div>`
 });
 

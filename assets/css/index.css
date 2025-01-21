@@ -21,9 +21,7 @@ body {
     align-items: center;
     justify-content: center;
 }
-main{
-    margin-top: 200px;
-}
+
 
 nav {
     display: flex;
