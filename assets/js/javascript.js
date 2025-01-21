@@ -534,44 +534,40 @@ showTime();
 
       });
 
-document.getElementById("librarynav").addEventListener('click', function (){
-  document.querySelector('main').style.marginTop = '0px';
-document.querySelector('main').innerHTML = ` <div class="library-container"></div>`
-
-function usunPiosenke(title) {
-  let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-  playlist = playlist.filter((song) => song.title !== title);
-  localStorage.setItem('playlist', JSON.stringify(playlist));
-  renderLibrary();
-  console.log(`Usunięto piosenkę: ${title}`);
-}
-
-function renderLibrary() {
-  let libraryContainer = document.querySelector(".library-container");
-  let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-
-  libraryContainer.innerHTML = "";
-
-  playlist.forEach((song) => {
-      libraryContainer.innerHTML += `
-          <div class="library-song">
-              <img src="${song.image}" alt="${song.title}" height="80px">
-              <h2>${song.title}</h2>
-              <h3>${song.artist}</h3>
-              <h4>${song.duration}</h4>
-              <button class="delete-btn" onclick="usunPiosenke('${song.title}')"><h2>-</h2></button>
-          </div>
-      `;
-  });
-}
-
-
-
-
-document.addEventListener("DOMContentLoaded", renderLibrary());
-
-  
-});
+      function usunPiosenke(title) {
+        let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+        playlist = playlist.filter((song) => song.title !== title);
+        localStorage.setItem('playlist', JSON.stringify(playlist));
+        renderLibrary();
+        console.log(`Usunięto piosenkę: ${title}`);
+      }
+      
+      document.getElementById("librarynav").addEventListener('click', function () {
+        document.querySelector('main').style.marginTop = '0px';
+        document.querySelector('main').innerHTML = ` <div class="library-container"></div>`;
+      
+        // Funkcja renderLibrary
+        function renderLibrary() {
+          let libraryContainer = document.querySelector(".library-container");
+          let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+      
+          libraryContainer.innerHTML = "";
+      
+          playlist.forEach((song) => {
+            libraryContainer.innerHTML += `
+              <div class="library-song">
+                  <img src="${song.image}" alt="${song.title}" height="80px">
+                  <h2>${song.title}</h2>
+                  <h3>${song.artist}</h3>
+                  <h4>${song.duration}</h4>
+                  <button class="delete-btn" onclick="usunPiosenke('${song.title}')"><h2>-</h2></button>
+              </div>
+            `;
+          });
+        }
+      
+        document.addEventListener("DOMContentLoaded", renderLibrary);
+      });
 
 
 
