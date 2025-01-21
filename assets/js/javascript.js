@@ -95,6 +95,32 @@ document.querySelector('main').innerHTML = `<div class="piosenki-container">
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
             </div>
         </div>`;
+        function pobierz(button) {
+          let parent = button.closest('.piosenkap');
+          if (!parent) {
+              console.error('Nie znaleziono elementu .piosenkap');
+              return;
+          }
+      
+          let song = {
+              title: parent.querySelector('h2:first-of-type')?.textContent || 'Nieznany tytuł',
+              artist: parent.querySelector('.name')?.textContent || 'Nieznany wykonawca',
+              duration: parent.querySelector('.time')?.textContent || '0:00',
+              image: parent.querySelector('img')?.src || ''
+          };
+      
+          let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+          
+          if (!playlist.some((s) => s.title === song.title && s.artist === song.artist)) {
+              playlist.push(song);
+              localStorage.setItem('playlist', JSON.stringify(playlist));
+              console.log(`Dodano piosenkę do playlisty: ${song.title}`);
+              renderLibrary(); // Call renderLibrary to update the library display
+          } else {
+              console.log(`Piosenka już istnieje: ${song.title}`);
+          }
+      }
+      
 document.querySelector('main').style.marginTop = '200px';
 
 document.getElementById("home").addEventListener('click', function (){
@@ -196,6 +222,32 @@ document.getElementById("home").addEventListener('click', function (){
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
             </div>
         </div>`;
+        function pobierz(button) {
+          let parent = button.closest('.piosenkap');
+          if (!parent) {
+              console.error('Nie znaleziono elementu .piosenkap');
+              return;
+          }
+      
+          let song = {
+              title: parent.querySelector('h2:first-of-type')?.textContent || 'Nieznany tytuł',
+              artist: parent.querySelector('.name')?.textContent || 'Nieznany wykonawca',
+              duration: parent.querySelector('.time')?.textContent || '0:00',
+              image: parent.querySelector('img')?.src || ''
+          };
+      
+          let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+          
+          if (!playlist.some((s) => s.title === song.title && s.artist === song.artist)) {
+              playlist.push(song);
+              localStorage.setItem('playlist', JSON.stringify(playlist));
+              console.log(`Dodano piosenkę do playlisty: ${song.title}`);
+              renderLibrary(); // Call renderLibrary to update the library display
+          } else {
+              console.log(`Piosenka już istnieje: ${song.title}`);
+          }
+      }
+      
 });
 document.getElementById('playerr').addEventListener('click', function (){
   document.querySelector('main').style.marginTop = '0px';
@@ -220,12 +272,43 @@ document.getElementById('playerr').addEventListener('click', function (){
                 </div>
             </section>
         </section>`
-});
+    
+      });
 
 document.getElementById("librarynav").addEventListener('click', function (){
   document.querySelector('main').style.marginTop = '0px';
 
  document.querySelector('main').innerHTML = ` <div class="library-container"></div>`
+  function usunPiosenke(title) {
+    let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+    playlist = playlist.filter((song) => song.title !== title);
+    localStorage.setItem('playlist', JSON.stringify(playlist)); 
+    renderLibrary(); 
+    console.log(`Usunięto piosenkę: ${title}`);
+}
+
+function renderLibrary() {
+    let libraryContainer = document.querySelector(".library-container");
+    let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+
+    libraryContainer.innerHTML = "";
+
+    playlist.forEach((song) => {
+        libraryContainer.innerHTML += `
+            <div class="library-song">
+                <img src="${song.image}" alt="${song.title}" height="80px">
+                <h2>${song.title}</h2>
+                <h3>${song.artist}</h3>
+                <h4>${song.duration}</h4>
+                <button onclick="usunPiosenke('${song.title}')"><h2>-</h2></button>
+            </div>
+        `;
+    });
+}
+
+document.addEventListener("DOMContentLoaded", renderLibrary);
+
+  
 });
 
 let piosenka1 = `<div class="piosenka">
