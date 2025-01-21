@@ -98,7 +98,7 @@ function renderPlaylist() {
   playerContainer.innerHTML = ""; // Czyszczenie listy
 
   playlist.forEach((song) => {
-      playerContainer.innerHTML += `
+        document.querySelector('.container').innerHTML += `
           <div class="piosenka">
               <img src="${song.image}" alt="${song.title}" height="80px">
               <h2>${song.title}</h2>
