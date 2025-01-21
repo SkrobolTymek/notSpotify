@@ -93,9 +93,6 @@ nav li:hover{
 }
 
 .library-song button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
     background-color: #ff0000;
     color: #fff;
     border: none;

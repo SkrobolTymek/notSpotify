@@ -19,7 +19,7 @@ function renderLibrary() {
                 <h2>${song.title}</h2>
                 <h3>${song.artist}</h3>
                 <h4>${song.duration}</h4>
-                <button onclick="usunPiosenke('${song.title}')">Usuń</button>
+                <button onclick="usunPiosenke('${song.title}')"><h2>-</h2></button>
             </div>
         `;
     });
