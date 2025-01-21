@@ -573,7 +573,7 @@ function usunPiosenke(title) {
   console.log(`Usunięto piosenkę: ${title}`);
 }
 
-document.addEventListener("DOMContentLoaded", renderLibrary);
+document.addEventListener("DOMContentLoaded", renderLibrary());
 
   
 });
