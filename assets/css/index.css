@@ -5,6 +5,7 @@ body, html {
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     background-color: #212121;
     color: #1db954;
@@ -19,9 +20,15 @@ nav {
     display: flex;
     background-color: #292929;
     margin-top: 20px;
-    width: 90vw;
+    width: 100%;
+    max-width: 1200px;
     border-radius: 20px;
     justify-content: space-between;
+    padding: 10px 20px;
+    transition: .3s;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 nav ul {
@@ -142,7 +149,19 @@ nav li:hover {
 
 @media (max-width: 1200px) {
     .piosenki-container {
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    nav {
+        padding: 15px;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    nav li {
+        padding: 15px;
     }
 }
 
@@ -150,10 +169,46 @@ nav li:hover {
     .piosenki-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        padding: 10px 20px;
+    }
 }
 
 @media (max-width: 600px) {
     .piosenki-container {
         grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    nav h1 {
+        font-size: large;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        padding: 8px;
+    }
+
+    .piosenkap {
+        height: auto;
     }
 }
