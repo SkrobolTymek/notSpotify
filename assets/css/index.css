@@ -1,10 +1,16 @@
 @import url(https://db.onlinewebfonts.com/c/f1a22f6f15d272c7aa56da8b2c91f5e5?family=Circular+Std+Black);
-
 body, html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* _________      .__                                
+/   _____/____  |__|____________________    ____   
+\_____  \\__  \ |  \___   /\___   /\__  \  /    \  
+/        \/ __ \|  |/    /  /    /  / __ \|   |  \ 
+/_______  (____  /__/_____ \/_____ \(____  /___|  / 
+       \/     \/         \/      \/     \/     \/   */
 
 body {
     background-color: #212121;
@@ -16,19 +22,14 @@ body {
     justify-content: center;
 }
 
+
 nav {
     display: flex;
     background-color: #292929;
     margin-top: 20px;
-    width: 100%;
-    max-width: 1200px;
+    width: 90vw;
     border-radius: 20px;
     justify-content: space-between;
-    padding: 10px 20px;
-    transition: .3s;
-    position: sticky;
-    top: 0;
-    z-index: 10;
 }
 
 nav ul {
@@ -78,18 +79,20 @@ nav li:hover {
     padding-left: 30px;
 }
 
+
 .piosenki-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 20px;
-    width: 90%;
-    max-width: 1200px;
+    width: 90%; 
+    max-width: 1200px; 
     margin-top: 20px;
 }
 
+
 .piosenkap {
-    background-color: #292929;
+    background-color: #292929;  
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -98,21 +101,19 @@ nav li:hover {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 300px;
+    height: 300px; 
     margin-bottom: 50px;
     padding-bottom: 30px;
     transition: .3s;
 }
-
-.piosenkap:hover {
+.piosenkap:hover{
     scale: 1.1;
     transition: .3s;
 }
-
 .piosenkap img {
     width: 100%;
     height: 150px;
-    object-fit: cover;
+    object-fit: cover; 
     border-radius: 8px;
     margin-bottom: 10px;
 }
@@ -145,70 +146,4 @@ nav li:hover {
 
 .piosenkap .plus-btn:hover {
     background-color: #1ED760;
-}
-
-@media (max-width: 1200px) {
-    .piosenki-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    nav {
-        padding: 15px;
-    }
-
-    nav ul {
-        justify-content: center;
-    }
-
-    nav li {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 900px) {
-    .piosenki-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav li {
-        padding: 10px 20px;
-    }
-}
-
-@media (max-width: 600px) {
-    .piosenki-container {
-        grid-template-columns: 1fr;
-    }
-
-    nav {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    nav h1 {
-        font-size: large;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav li {
-        padding: 8px;
-    }
-
-    .piosenkap {
-        height: auto;
-    }
 }
