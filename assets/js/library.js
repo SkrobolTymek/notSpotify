@@ -3,6 +3,14 @@ function renderLibrary() {
     let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
 
     libraryContainer.innerHTML = ""; // Czyszczenie listy
+    function usunPiosenke(title) {
+        let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+        playlist = playlist.filter((song) => song.title !== title); // Filtruje playlistę, usuwając piosenkę o podanym tytule
+        localStorage.setItem('playlist', JSON.stringify(playlist)); // Aktualizuje playlistę w LocalStorage
+        renderLibrary(); // Ponowne renderowanie listy
+        console.log(`Usunięto piosenkę: ${title}`);
+    }
+    
 
     playlist.forEach((song) => {
         libraryContainer.innerHTML += `
@@ -15,15 +23,7 @@ function renderLibrary() {
             </div>
         `;
     });
-    function usunPiosenke(title) {
-        let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-        playlist = playlist.filter((song) => song.title !== title); // Filtruje playlistę, usuwając piosenkę o podanym tytule
-        localStorage.setItem('playlist', JSON.stringify(playlist)); // Aktualizuje playlistę w LocalStorage
-        renderLibrary(); // Ponowne renderowanie listy
-        console.log(`Usunięto piosenkę: ${title}`);
-    }
     
-
 }
 
 document.addEventListener("DOMContentLoaded", renderLibrary);
