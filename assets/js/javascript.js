@@ -545,15 +545,16 @@ function renderLibrary() {
 
     libraryContainer.innerHTML = "";
 
-    function usunPiosenke(title) {
-      let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-      playlist = playlist.filter((song) => song.title !== title);
-      localStorage.setItem('playlist', JSON.stringify(playlist));
-      renderLibrary();
-      console.log(`Usunięto piosenkę: ${title}`);
-    }
+    
 
     playlist.forEach((song) => {
+      function usunPiosenke(title) {
+        let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+        playlist = playlist.filter((song) => song.title !== title);
+        localStorage.setItem('playlist', JSON.stringify(playlist));
+        renderLibrary();
+        console.log(`Usunięto piosenkę: ${title}`);
+      }
         libraryContainer.innerHTML += `
             <div class="library-song">
                 <img src="${song.image}" alt="${song.title}" height="80px">
