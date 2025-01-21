@@ -323,40 +323,32 @@ document.getElementById("home").addEventListener('click', function (){
       }
       
 });
-document.getElementById('playerr').addEventListener('click', function (){
+document.getElementById('playerr').addEventListener('click', function () {
   document.querySelector('main').style.marginTop = '0px';
 
-  document.querySelector('main').innerHTML = `<section class="leftSectionMain">
-            <div class="container">
-            
-        </div>
+  document.querySelector('main').innerHTML = `
+    <section class="leftSectionMain">
+        <div class="container"></div>
+    </section>
+    <section class="rightSectionMain">
+        <section class="play">
+            <div class="audio-player"></div>
         </section>
-        <section class="rightSectionMain">
-            <section class="play">
-                <div class="audio-player">
-                    
-                </div>
-            </section>
-            <section class="bottomTwoDivs">
-                <div class="songInfo">
-                    
-                </div>
-                <div class="clock">
-                    0:00:00
-                </div>
-            </section>
-        </section>`
-        let containerPiosenki = document.querySelector('.container');
+        <section class="bottomTwoDivs">
+            <div class="songInfo"></div>
+            <div class="clock">0:00:00</div>
+        </section>
+    </section>`;
 
-        let piosenki = document.querySelectorAll(".piosenka");
-        function zmianaPiosenek() {
-          let wybranaPiosenka = document.querySelector(
-            "#wybranaPiosenka h2:first-of-type"
-          ).textContent;
-        
-          let songUrl = "";
-        
-          let opis = "";
+  let containerPiosenki = document.querySelector('.container');
+  let piosenki = document.querySelectorAll(".piosenka");
+
+  // Funkcja zmiany piosenki
+  function zmianaPiosenek() {
+    let wybranaPiosenka = document.querySelector("#wybranaPiosenka h2:first-of-type").textContent;
+
+    let songUrl = "";
+    let opis = "";
         
           switch (wybranaPiosenka) {
             case "Feel Good Inc ":
@@ -455,84 +447,73 @@ document.getElementById('playerr').addEventListener('click', function (){
           }
         
           let audioPlayer = document.querySelector(".audio-player");
-          audioPlayer.innerHTML = `
-            <audio controls id="background_audio1">
-                <source src="${songUrl}" />
-                Your browser does not support the audio element.
-            </audio>
-            <div id="PokazName">${wybranaPiosenka}</div>
-        `;
-        
-          let songInfo = document.querySelector(".songInfo");
-          songInfo.innerHTML = `
-            <h2>${opis}</h2>
-            `;
-        }
-piosenki.forEach(function (piosenka) {
-  piosenka.addEventListener("click", function () {
-    piosenki.forEach(function () {
-      piosenka.id = ""; 
+    audioPlayer.innerHTML = `
+      <audio controls id="background_audio1">
+          <source src="${songUrl}" />
+          Your browser does not support the audio element.
+      </audio>
+      <div id="PokazName">${wybranaPiosenka}</div>
+    `;
+
+    let songInfo = document.querySelector(".songInfo");
+    songInfo.innerHTML = `<h2>${opis}</h2>`;
+  }
+  piosenki.forEach(function (piosenka) {
+    piosenka.addEventListener("click", function () {
+      // Resetowanie id innych piosenek
+      piosenki.forEach(function (song) {
+        song.id = ""; 
+      });
+
+      // Ustawianie id dla klikniętej piosenki
+      piosenka.id = "wybranaPiosenka"; 
+      zmianaPiosenek();  // Zmieniamy piosenkę i wyświetlamy audio playera
     });
-    piosenka.id = "wybranaPiosenka"; 
-    zmianaPiosenek(); 
   });
-});
-        let songTitle = localStorage.getItem('selectedSong');
-        
-        
-        console.log(localStorage.getItem('playlist'));
-        
-        if (songTitle) {
-            console.log(`Odczytany tytuł piosenki: ${songTitle}`);
-        } else {
-            console.log('Brak wybranego tytułu piosenki w LocalStorage.');
-        }
-        
-        
-          let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-        
-           document.querySelector('.container').innerHTML = ""; 
-          playlist.forEach((song) => {
-                document.querySelector('.container').innerHTML += `
-                  <div class="piosenka">
-                      <img src="${song.image}" alt="${song.title}" height="80px">
-                      <h2>${song.title}</h2>
-                      <h2 class="name">${song.artist}</h2>
-                      <h2 class="time">${song.duration}</h2>
-                  </div>
-              `;
-          });
-          
-setInterval(showTime, 1000);
 
-function showTime() {
-  let time = new Date();
-  let hour = time.getHours();
-  let min = time.getMinutes();
-  let sec = time.getSeconds();
-  let am_pm = "AM";
+  // Ładowanie playlisty z localStorage
+  let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+  containerPiosenki.innerHTML = "";  // Czyszczenie kontenera przed wstawieniem nowych piosenek
 
-  if (hour >= 12) {
-    if (hour > 12) hour -= 12;
-    am_pm = "PM";
-  } else if (hour == 0) {
-    hour = 12;
-    am_pm = "AM";
+  playlist.forEach((song) => {
+    containerPiosenki.innerHTML += `
+      <div class="piosenka">
+          <img src="${song.image}" alt="${song.title}" height="80px">
+          <h2>${song.title}</h2>
+          <h2 class="name">${song.artist}</h2>
+          <h2 class="time">${song.duration}</h2>
+      </div>
+    `;
+  });
+
+  // Wyświetlanie aktualnego czasu
+  setInterval(showTime, 1000);
+
+  function showTime() {
+    let time = new Date();
+    let hour = time.getHours();
+    let min = time.getMinutes();
+    let sec = time.getSeconds();
+    let am_pm = "AM";
+
+    if (hour >= 12) {
+      if (hour > 12) hour -= 12;
+      am_pm = "PM";
+    } else if (hour == 0) {
+      hour = 12;
+      am_pm = "AM";
+    }
+
+    hour = hour < 10 ? "0" + hour : hour;
+    min = min < 10 ? "0" + min : min;
+    sec = sec < 10 ? "0" + sec : sec;
+
+    let currentTime = hour + ":" + min + ":" + sec + " " + am_pm;
+    document.querySelector(".clock").innerHTML = `<h2>${currentTime}</h2>`;
   }
 
-  hour = hour < 10 ? "0" + hour : hour;
-  min = min < 10 ? "0" + min : min;
-  sec = sec < 10 ? "0" + sec : sec;
-
-  let currentTime = hour + ":" + min + ":" + sec + " " + am_pm;
-
-  document.querySelector(".clock").innerHTML = `<h2>${currentTime}</h2>`;
-
-}
-
-showTime();
-
-      });
+  showTime();  // Natychmiastowe wyświetlenie czasu
+});
 
      // Funkcja usuwania piosenki na poziomie globalnym
 function usunPiosenke(title) {
