@@ -13,8 +13,12 @@ function pobierz(button) {
     };
 
     let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
-    playlist.push(song);
     
-    localStorage.setItem('playlist', JSON.stringify(playlist));
-    console.log(`Dodano piosenkę do playlisty: ${song.title}`);
+    if (!playlist.some((s) => s.title === song.title && s.artist === song.artist)) {
+        playlist.push(song);
+        localStorage.setItem('playlist', JSON.stringify(playlist));
+        console.log(`Dodano piosenkę do playlisty: ${song.title}`);
+    } else {
+        console.log(`Piosenka już istnieje: ${song.title}`);
+    }
 }

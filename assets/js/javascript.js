@@ -88,17 +88,32 @@ if (songTitle) {
 
 
 function renderPlaylist() {
-  playerContainer.innerHTML = "";
-  storedSongs.forEach((song) => {
+  let playerContainer = document.querySelector(".container");
+  let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+
+  playerContainer.innerHTML = ""; // Czyszczenie listy
+
+  playlist.forEach((song) => {
       playerContainer.innerHTML += `
-          <div class="player-song" data-id="${song.id}">
-              <img src="${song.imgSrc}" alt="${song.title}" height="80px">
+          <div class="piosenka">
+              <img src="${song.image}" alt="${song.title}" height="80px">
               <h2>${song.title}</h2>
               <h3>${song.artist}</h3>
-              <button class="play-button">Odtwórz</button>
+              <h4>${song.duration}</h4>
+              <button onclick="usunPiosenke('${song.title}')">Usuń</button>
           </div>
       `;
-  })}
+  });
+}
+
+  function usunPiosenke(title) {
+    let playlist = JSON.parse(localStorage.getItem('playlist')) || [];
+    playlist = playlist.filter((song) => song.title !== title);
+    localStorage.setItem('playlist', JSON.stringify(playlist));
+    renderPlaylist();
+    console.log(`Usunięto piosenkę: ${title}`);
+}
+
 
 
 let piosenki = document.querySelectorAll(".piosenka");
