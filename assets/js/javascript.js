@@ -1,4 +1,4 @@
-
+alert("UWAGA, JEŚLI NIE JESTEŚ NA KOMPUTERZE TO STRONA NIE BĘDZIE WYGLĄDAĆ W PEŁNI DOBRZE");
 
 
 
@@ -264,8 +264,9 @@ document.querySelector('main').innerHTML = `<div class="piosenki-container">
       }
       document.querySelector('header').id = "headerXD";
 
-
+document.querySelector('main').id = "mainHome"
 document.getElementById("home", "home2").addEventListener('click', function (){
+  document.querySelector('main').id = "mainHome"
   document.querySelector('header').id = "headerXD";
   document.querySelector('main').innerHTML = `<div class="piosenki-container">
             <div class="piosenkap">
@@ -393,7 +394,7 @@ document.getElementById("home", "home2").addEventListener('click', function (){
 });
 document.getElementById('playerr', 'playerr2').addEventListener('click', function () {
   console.log("Kliknięto na playerr!"); 
-
+  document.querySelector('main').id = "mainPlayer"
 
   document.querySelector('header').id = "headerlol";
 
@@ -592,6 +593,7 @@ function renderLibrary() {
 
 
 document.getElementById("librarynav", "librarynav2").addEventListener('click', function () {
+  document.querySelector('main').id = "mainLib"
   console.log("kliknales library, gdzies inny jest blad");
   document.querySelector('header').id = "headerbozo";
   document.querySelector('main').innerHTML = `<div class="library-container" style=""></div>`;
@@ -609,6 +611,7 @@ hamMenu.addEventListener('click', () =>{
 
 
 function changeToHome(){
+  document.querySelector('main').id = "mainHome"
   document.querySelector('header').id = "headerXD";
   document.querySelector('main').innerHTML = `<div class="piosenki-container">
             <div class="piosenkap">
@@ -738,6 +741,7 @@ function changeToHome(){
 
 function changeToPlayer(){
   console.log("Kliknięto na playerr!"); 
+  document.querySelector('main').id = "mainPlayer"
 
 
   document.querySelector('header').id = "headerlol";
@@ -904,4 +908,11 @@ function changeToPlayer(){
   showTime();  
 }
 
-function changeToLibrary(){}
+function changeToLibrary(){
+  document.querySelector('main').id = "mainLib"
+  console.log("kliknales library, gdzies inny jest blad");
+  document.querySelector('header').id = "headerbozo";
+  document.querySelector('main').innerHTML = `<div class="library-container" style=""></div>`;
+
+  renderLibrary(); 
+}

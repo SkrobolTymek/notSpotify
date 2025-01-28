@@ -24,8 +24,9 @@ nav{
     justify-content: space-between;
     
 }
-header{
-    margin-bottom: 200px;
+.headerbozo{
+    
+    margin-bottom: 100px;
 }
 nav ul{
     list-style: none;
@@ -58,6 +59,8 @@ nav img{
     padding: 15px;
     
 }
+
+
 nav h1{
     padding-right: 10%;
     transition: .3s;
@@ -140,7 +143,9 @@ nav li:hover{
     .library-container {
         grid-template-columns: repeat(2, 1fr); 
     }
-    
+    #mainLib{
+        margin-top: 400px;
+    }
 .ham-menu{
     display: none;
 }
@@ -169,6 +174,10 @@ nav li:hover{
 }
 .off-screen-menu ul{
     flex-direction: column;
+}
+.headerbozo{
+    
+    margin-bottom: 200px;
 }
 .normalmenu{
     display: none;
@@ -211,6 +220,7 @@ nav li:hover{
     top: 50%;
 }
 .library-container{
+    margin-top: 200px;
     grid-template-columns: repeat(2, 1fr); 
 }
 .img {display: none;}

@@ -4,11 +4,11 @@ body, html {
     padding: 0;
     box-sizing: border-box;
 }
-main{
+#mainHome{
     transition: .3s;
 }
 #headerXD{
-    margin-bottom: 300px;
+    margin-bottom: 100px;
 }
 
 /* _________      .__                                
@@ -224,7 +224,7 @@ nav li:hover {
         top: 50%;
     }
     .piosenki-container {
-        margin-top: 1400px;
+        margin-top: 0;
         grid-template-columns: repeat(2, 1fr); 
     }
     .img {display: none;}

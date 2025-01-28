@@ -2,8 +2,9 @@
 body, html{
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
-main{
+#mainPlayer{
     transition: .3s;
 }
 #headerlol{
@@ -43,6 +44,7 @@ nav li{
     padding-right: 30px;   
     margin-right: 10px;
     transition-duration: .3s;
+    cursor: pointer;
 }
 
 nav h1{
@@ -105,7 +107,7 @@ transition: .3s;
 scale: 1.1;
 }
 
-main{
+#mainPlayer{
     display: flex;
     width: 100%;
     height: 87vh;
@@ -188,6 +190,75 @@ background-color: #444444;
     transition: .3s;
     scale: 1.1;
     background-color: #444444;
+}
+@media only screen and (max-width: 600px) {
+    .ham-menu{
+        display: none;
+    }
+    .off-screen-menu{
+        display: none;
+    }
+    .off-screen-menu{
+        background-color: rgb(34, 37, 49);
+        height: 100vh;
+        width: 100%;
+        max-width: 450px;
+        position: fixed;
+        top: 0;
+        right: -500px;
+        display: flex;
+        flex-direction: column wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 3rem;
+        transition: .3s ease;
+    }
+    .off-screen-menu.active {
+        right: 0;
+        flex-direction: column;
+    }
+    .off-screen-menu ul{
+        flex-direction: column;
+    }
+
+    .ham-menu{
+        margin-top: 18px;
+        margin-right: 20px;
+        height: 50px;
+        width: 50px;
+        margin-left: auto;
+        position: relative;
+        display: block;
+    }
+    .ham-menu span {
+        height: 5px;
+        width: 100%;
+        background-color: #1DB954;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: .3s ease;
+    }
+    .ham-menu span:nth-child(1){
+        top: 25%;
+    }
+    .ham-menu span:nth-child(3){
+        top: 75%;
+    }
+    .ham-menu.active span:nth-child(1) {
+        top: 50%;
+        transform: translate(-50, -50) rotate(45deg);
+    }
+    .ham-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .ham-menu.active span:nth-child(3){
+        transform: translate(-50, -50) rotate(45deg);
+        top: 50%;
+    }
 }
 
 
