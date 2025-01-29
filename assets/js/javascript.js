@@ -1,5 +1,3 @@
-alert("UWAGA, JEŚLI NIE JESTEŚ NA KOMPUTERZE TO STRONA NIE BĘDZIE WYGLĄDAĆ W PEŁNI DOBRZE");
-
 
 
 
@@ -613,6 +611,8 @@ hamMenu.addEventListener('click', () =>{
 function changeToHome(){
   document.querySelector('main').id = "mainHome"
   document.querySelector('header').id = "headerXD";
+  hamMenu.classList.remove('active');
+  offScreenMenu.classList.remove('active');
   document.querySelector('main').innerHTML = `<div class="piosenki-container">
             <div class="piosenkap">
                 <img src="assets/images/FeelGoodIncGorillaz.jpg" height="80px" alt="">
@@ -742,7 +742,8 @@ function changeToHome(){
 function changeToPlayer(){
   console.log("Kliknięto na playerr!"); 
   document.querySelector('main').id = "mainPlayer"
-
+  hamMenu.classList.remove('active');
+  offScreenMenu.classList.remove('active');
 
   document.querySelector('header').id = "headerlol";
 
@@ -908,7 +909,10 @@ function changeToPlayer(){
   showTime();  
 }
 
+
 function changeToLibrary(){
+  hamMenu.classList.remove('active');
+  offScreenMenu.classList.remove('active');
   document.querySelector('main').id = "mainLib"
   console.log("kliknales library, gdzies inny jest blad");
   document.querySelector('header').id = "headerbozo";
@@ -916,3 +920,4 @@ function changeToLibrary(){
 
   renderLibrary(); 
 }
+

@@ -195,6 +195,9 @@ background-color: #444444;
     .ham-menu{
         display: none;
     }
+    header h1{
+        margin-left: 15px;
+    }
     .off-screen-menu{
         display: none;
     }
@@ -213,9 +216,11 @@ background-color: #444444;
         text-align: center;
         font-size: 3rem;
         transition: .3s ease;
+        z-index: 3;
     }
     .off-screen-menu.active {
         right: 0;
+        z-index: 3;
         flex-direction: column;
     }
     .off-screen-menu ul{
@@ -242,6 +247,9 @@ background-color: #444444;
         transform: translate(-50%, -50%);
         transition: .3s ease;
     }
+    #background_audio1{
+        z-index: 2;
+    }
     .ham-menu span:nth-child(1){
         top: 25%;
     }
@@ -258,6 +266,110 @@ background-color: #444444;
     .ham-menu.active span:nth-child(3){
         transform: translate(-50, -50) rotate(45deg);
         top: 50%;
+    }
+    .rightSectionMain{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .bottomTwoDivs{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+    #mainPlayer{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-top: 300px;
+        z-index: 1;
+    }
+    .leftSectionMain{
+        margin-top: 200px;
+        padding-bottom: 130px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    #close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        width: 50px;
+        height: 50px;
+        font-size: 0;
+    }
+    #close:before, 
+    #close:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 20px;
+        background-color: #F0F0F0;
+        transform: rotate(45deg) translate(-50%, -50%);
+        transform-origin: top left;
+        content: '';
+    }
+    #close:after {
+        transform: rotate(-45deg) translate(-50%, -50%);
+    }
+    .piosenka{
+        margin-top: 75px;
+    }
+    .play{
+        margin-top: 100px;
+        margin-left: 0px;
+    }
+    .container{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .name{
+        display: none;
+
+    }
+    .time{
+        display: none;
+    }
+    .audio-player{
+        width: 300px;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        text-wrap: wrap;
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+    }
+    .clock{
+        margin-left: 0px;
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+    .songInfo{
+        background-color: #292929;
+    border-radius: 20px;
+     margin-left: 0px; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    margin-top: 100px;
+    transition: .3s;
     }
 }
 

@@ -144,7 +144,7 @@ nav li:hover{
         grid-template-columns: repeat(2, 1fr); 
     }
     #mainLib{
-        margin-top: 400px;
+        margin-top: -100px;
     }
 .ham-menu{
     display: none;
@@ -177,7 +177,7 @@ nav li:hover{
 }
 .headerbozo{
     
-    margin-bottom: 200px;
+    margin-bottom: 30px;
 }
 .normalmenu{
     display: none;
