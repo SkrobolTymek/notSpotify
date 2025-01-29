@@ -605,7 +605,13 @@ const offScreenMenu = document.querySelector('.off-screen-menu');
 hamMenu.addEventListener('click', () =>{
   hamMenu.classList.toggle('active');
   offScreenMenu.classList.toggle('active');
-} )
+  document.getElementById('close').addEventListener('click', function (){
+      hamMenu.classList.remove('active');
+      offScreenMenu.classList.remove('active');
+  });
+} );
+
+
 
 
 function changeToHome(){
@@ -880,7 +886,13 @@ function changeToPlayer(){
       zmianaPiosenek(); 
     });
   });
-
+  if (typeof document.querySelector(".clock") === undefined){
+  function showTime(){
+    
+  }
+}
+else{
+  
   setInterval(showTime, 1000);
 
   function showTime() {
@@ -906,8 +918,9 @@ function changeToPlayer(){
     document.querySelector(".clock").innerHTML = `<h2>${currentTime}</h2>`;
   }
 
-  showTime();  
+  showTime();
 }
+} 
 
 
 function changeToLibrary(){
@@ -920,4 +933,3 @@ function changeToLibrary(){
 
   renderLibrary(); 
 }
-
