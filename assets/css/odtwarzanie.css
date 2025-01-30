@@ -324,14 +324,14 @@ background-color: #444444;
         transform: rotate(-45deg) translate(-50%, -50%);
     }
     .piosenka{
-        margin-top: 75px;
+        margin-top: 50px;
     }
     .play{
         margin-top: 100px;
         margin-left: 0px;
     }
     .container{
-        
+        padding-top: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
