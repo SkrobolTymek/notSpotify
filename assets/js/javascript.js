@@ -64,7 +64,7 @@
 
 
 
-ale
+alert("STRONA W BUDOWIE");
 
 let piosenka1 = `<div class="piosenka">
                 <img src="assets/images/FeelGoodIncGorillaz.jpg" height="80px" alt="">
