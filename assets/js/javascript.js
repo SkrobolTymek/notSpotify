@@ -68,37 +68,37 @@
 let piosenka1 = `<div class="piosenka">
                 <img src="assets/images/FeelGoodIncGorillaz.jpg" height="80px" alt="">
                 <h2>Feel Good Inc </h2>
-                <h2 class="name"> Gorillaz </h2>
+                <h2 class="name"> Gorillaz</h2>
                 <h2 class="time">4:13</h2>
             </div>`;
 let piosenka2 = ` <div class="piosenka">
                 <img src="assets/images/ClintEastwoodGorillaz.jpg" height="80px" alt="">
                 <h2>Clint Eastwood </h2>
-                <h2 class="name"> Gorillaz </h2>
+                <h2 class="name"> Gorillaz</h2>
                 <h2 class="time">4:29</h2>
             </div>`;
 let piosenka3 = ` <div class="piosenka">
                 <img src="assets/images/FooFightersLearnToFly.jpg" height="80px" alt="">
                 <h2>Learn To Fly </h2>
-                <h2 class="name"> Foo Fighters </h2>
+                <h2 class="name"> Foo Fighters</h2>
                 <h2 class="time">4:37</h2>
             </div>`;
 let piosenka4 = `<div class="piosenka">
                 <img src="assets/images/HolyWarsThePunishmentDue.jpg" height="80px" alt="">
                 <h2>Holy Wars... The Punishment Due</h2>
-                <h2 class="name"> Megadeth </h2>
+                <h2 class="name"> Megadeth</h2>
                 <h2 class="time">6:38</h2>
             </div>`;
 let piosenka5 = `<div class="piosenka">
                 <img src="assets/images/InBloom.webp" height="80px" alt="">
                 <h2>In bloom </h2>
-                <h2 class="name"> Nirvana </h2>
+                <h2 class="name"> Nirvana</h2>
                 <h2 class="time">4:58</h2>
             </div>`;
 let piosenka6 = `<div class="piosenka">
                 <img src="assets/images/MetallicaCallOfKtulu.jpg" height="80px" alt="">
                 <h2>Call of Ktulu</h2>
-                <h2 class="name"> Metallica </h2>
+                <h2 class="name"> Metallica</h2>
                 <h2 class="time">8:56</h2>
             </div>`;
 let piosenka7 = `<div class="piosenka">
@@ -127,13 +127,13 @@ let piosenka10 = `<div class="piosenka">
             </div>`;
 let piosenka11 = ` <div class="piosenka">
                 <img src="assets/images/TheOffspringPrettyFlyforaWhiteGuy.jpg" height="80px" alt="">
-                <h2>Pretty Fly for a white guy </h2>
+                <h2>Pretty Fly for a white guy</h2>
                 <h2 class="name"> The offspring </h2>
                 <h2 class="time">3:13</h2>
             </div>`;
 let piosenka12 = `<div class="piosenka">
                 <img src="assets/images/TornadoOfSoulsMegadeth.jpg" height="80px" alt="">
-                <h2>Tornado of Souls </h2>
+                <h2>Tornado of Souls</h2>
                 <h2 class="name"> Megadeth </h2>
                 <h2 class="time">5:20</h2>
             </div>`;
@@ -141,7 +141,7 @@ let piosenka12 = `<div class="piosenka">
 document.querySelector('main').innerHTML = `<div class="piosenki-container">
             <div class="piosenkap">
                 <img src="assets/images/FeelGoodIncGorillaz.jpg" height="80px" alt="">
-                <h2>Feel Good Inc </h2>
+                <h2>Feel Good Inc</h2>
                 <h2 class="name">Gorillaz</h2>
                 <h2 class="time">4:13</h2>
                 <button class="plus-btn" onclick="pobierz(this)"> +</button>
@@ -149,7 +149,7 @@ document.querySelector('main').innerHTML = `<div class="piosenki-container">
     
             <div class="piosenkap">
                 <img src="assets/images/ClintEastwoodGorillaz.jpg" height="80px" alt="">
-                <h2>Clint Eastwood </h2>
+                <h2>Clint Eastwood</h2>
                 <h2 class="name">Gorillaz</h2>
                 <h2 class="time">4:29</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -157,7 +157,7 @@ document.querySelector('main').innerHTML = `<div class="piosenki-container">
     
             <div class="piosenkap">
                 <img src="assets/images/FooFightersLearnToFly.jpg" height="80px" alt="">
-                <h2>Learn To Fly </h2>
+                <h2>Learn To Fly</h2>
                 <h2 class="name">Foo Fighters</h2>
                 <h2 class="time">4:37</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -173,7 +173,7 @@ document.querySelector('main').innerHTML = `<div class="piosenki-container">
     
             <div class="piosenkap">
                 <img src="assets/images/InBloom.webp" height="80px" alt="">
-                <h2>In bloom </h2>
+                <h2>In bloom</h2>
                 <h2 class="name">Nirvana</h2>
                 <h2 class="time">4:58</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -221,7 +221,7 @@ document.querySelector('main').innerHTML = `<div class="piosenki-container">
     
             <div class="piosenkap">
                 <img src="assets/images/TheOffspringPrettyFlyforaWhiteGuy.jpg" height="80px" alt="">
-                <h2>Pretty Fly for a White Guy </h2>
+                <h2>Pretty Fly for a White Guy</h2>
                 <h2 class="name">The Offspring</h2>
                 <h2 class="time">3:13</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -229,7 +229,7 @@ document.querySelector('main').innerHTML = `<div class="piosenki-container">
     
             <div class="piosenkap">
                 <img src="assets/images/TornadoOfSoulsMegadeth.jpg" height="80px" alt="">
-                <h2>Tornado of Souls </h2>
+                <h2>Tornado of Souls</h2>
                 <h2 class="name">Megadeth</h2>
                 <h2 class="time">5:20</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -269,7 +269,7 @@ document.getElementById("home", "home2").addEventListener('click', function (){
   document.querySelector('main').innerHTML = `<div class="piosenki-container">
             <div class="piosenkap">
                 <img src="assets/images/FeelGoodIncGorillaz.jpg" height="80px" alt="">
-                <h2>Feel Good Inc </h2>
+                <h2>Feel Good Inc</h2>
                 <h2 class="name">Gorillaz</h2>
                 <h2 class="time">4:13</h2>
                 <button class="plus-btn" onclick="pobierz(this)"> +</button>
@@ -277,7 +277,7 @@ document.getElementById("home", "home2").addEventListener('click', function (){
     
             <div class="piosenkap">
                 <img src="assets/images/ClintEastwoodGorillaz.jpg" height="80px" alt="">
-                <h2>Clint Eastwood </h2>
+                <h2>Clint Eastwood</h2>
                 <h2 class="name">Gorillaz</h2>
                 <h2 class="time">4:29</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -285,7 +285,7 @@ document.getElementById("home", "home2").addEventListener('click', function (){
     
             <div class="piosenkap">
                 <img src="assets/images/FooFightersLearnToFly.jpg" height="80px" alt="">
-                <h2>Learn To Fly </h2>
+                <h2>Learn To Fly</h2>
                 <h2 class="name">Foo Fighters</h2>
                 <h2 class="time">4:37</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -301,7 +301,7 @@ document.getElementById("home", "home2").addEventListener('click', function (){
     
             <div class="piosenkap">
                 <img src="assets/images/InBloom.webp" height="80px" alt="">
-                <h2>In bloom </h2>
+                <h2>In bloom</h2>
                 <h2 class="name">Nirvana</h2>
                 <h2 class="time">4:58</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -349,7 +349,7 @@ document.getElementById("home", "home2").addEventListener('click', function (){
     
             <div class="piosenkap">
                 <img src="assets/images/TheOffspringPrettyFlyforaWhiteGuy.jpg" height="80px" alt="">
-                <h2>Pretty Fly for a White Guy </h2>
+                <h2>Pretty Fly for a White Guy</h2>
                 <h2 class="name">The Offspring</h2>
                 <h2 class="time">3:13</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -357,7 +357,7 @@ document.getElementById("home", "home2").addEventListener('click', function (){
     
             <div class="piosenkap">
                 <img src="assets/images/TornadoOfSoulsMegadeth.jpg" height="80px" alt="">
-                <h2>Tornado of Souls </h2>
+                <h2>Tornado of Souls</h2>
                 <h2 class="name">Megadeth</h2>
                 <h2 class="time">5:20</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -445,15 +445,15 @@ document.getElementById('playerr', 'playerr2').addEventListener('click', functio
     let opis = "";
 
     switch (wybranaPiosenka) {
-      case "Feel Good Inc ":
+      case "Feel Good Inc":
         songUrl = "assets/Audio/Fgi.mp3";
         opis = "Feel Good Inc. by Gorillaz is a song that blends elements of alternative rock, hip-hop, and electronic music...";
         break;
-      case "Clint Eastwood ":
+      case "Clint Eastwood":
         songUrl = "assets/Audio/Cle.mp3";
         opis = "Clint Eastwood by Gorillaz is a genre-blending track that mixes hip-hop, alternative rock, and electronic elements...";
         break;
-      case "Learn To Fly ":
+      case "Learn To Fly":
         songUrl = "assets/Audio/Ltf.mp3";
         opis = "Learn to Fly by Foo Fighters is an energetic rock song that blends catchy melodies with powerful guitar riffs...";
         break;
@@ -461,7 +461,7 @@ document.getElementById('playerr', 'playerr2').addEventListener('click', functio
         songUrl = "assets/Audio/Hwtpd.mp3";
         opis = "Holy Wars... The Punishment Due by Megadeth is a fast-paced thrash metal epic that addresses political and religious conflict...";
         break;
-      case "In bloom ":
+      case "In bloom":
         songUrl = "assets/Audio/Ib.mp3";
         opis = "In Bloom by Nirvana is a grunge rock song that contrasts catchy, melodic elements with deeper, more introspective lyrics...";
         break;
@@ -485,11 +485,11 @@ document.getElementById('playerr', 'playerr2').addEventListener('click', functio
         songUrl = "assets/Audio/Slts.mp3";
         opis = "Smells Like Teen Spirit by Nirvana is an iconic grunge anthem that revolutionized rock music...";
         break;
-      case "Pretty Fly for a white guy ":
+      case "Pretty Fly for a white guy":
         songUrl = "assets/Audio/Pffawg.mp3";
         opis = "Pretty Fly (for a White Guy) by The Offspring is a fun, upbeat punk rock song that humorously addresses cultural appropriation...";
         break;
-      case "Tornado of Souls ":
+      case "Tornado of Souls":
         songUrl = "assets/Audio/Tos.mp3";
         opis = "Tornado of Souls by Megadeth is a high-energy thrash metal track known for its intricate guitar work...";
         break;
@@ -622,7 +622,7 @@ function changeToHome(){
   document.querySelector('main').innerHTML = `<div class="piosenki-container">
             <div class="piosenkap">
                 <img src="assets/images/FeelGoodIncGorillaz.jpg" height="80px" alt="">
-                <h2>Feel Good Inc </h2>
+                <h2>Feel Good Inc</h2>
                 <h2 class="name">Gorillaz</h2>
                 <h2 class="time">4:13</h2>
                 <button class="plus-btn" onclick="pobierz(this)"> +</button>
@@ -630,7 +630,7 @@ function changeToHome(){
     
             <div class="piosenkap">
                 <img src="assets/images/ClintEastwoodGorillaz.jpg" height="80px" alt="">
-                <h2>Clint Eastwood </h2>
+                <h2>Clint Eastwood</h2>
                 <h2 class="name">Gorillaz</h2>
                 <h2 class="time">4:29</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -638,7 +638,7 @@ function changeToHome(){
     
             <div class="piosenkap">
                 <img src="assets/images/FooFightersLearnToFly.jpg" height="80px" alt="">
-                <h2>Learn To Fly </h2>
+                <h2>Learn To Fly</h2>
                 <h2 class="name">Foo Fighters</h2>
                 <h2 class="time">4:37</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -654,7 +654,7 @@ function changeToHome(){
     
             <div class="piosenkap">
                 <img src="assets/images/InBloom.webp" height="80px" alt="">
-                <h2>In bloom </h2>
+                <h2>In bloom</h2>
                 <h2 class="name">Nirvana</h2>
                 <h2 class="time">4:58</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -702,7 +702,7 @@ function changeToHome(){
     
             <div class="piosenkap">
                 <img src="assets/images/TheOffspringPrettyFlyforaWhiteGuy.jpg" height="80px" alt="">
-                <h2>Pretty Fly for a White Guy </h2>
+                <h2>Pretty Fly for a White Guy</h2>
                 <h2 class="name">The Offspring</h2>
                 <h2 class="time">3:13</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -710,7 +710,7 @@ function changeToHome(){
     
             <div class="piosenkap">
                 <img src="assets/images/TornadoOfSoulsMegadeth.jpg" height="80px" alt="">
-                <h2>Tornado of Souls </h2>
+                <h2>Tornado of Souls</h2>
                 <h2 class="name">Megadeth</h2>
                 <h2 class="time">5:20</h2>
                 <button class="plus-btn" onclick="pobierz(this)">+</button>
@@ -802,15 +802,15 @@ function changeToPlayer(){
     let opis = "";
 
     switch (wybranaPiosenka) {
-      case "Feel Good Inc ":
+      case "Feel Good Inc":
         songUrl = "assets/Audio/Fgi.mp3";
         opis = "Feel Good Inc. by Gorillaz is a song that blends elements of alternative rock, hip-hop, and electronic music...";
         break;
-      case "Clint Eastwood ":
+      case "Clint Eastwood":
         songUrl = "assets/Audio/Cle.mp3";
         opis = "Clint Eastwood by Gorillaz is a genre-blending track that mixes hip-hop, alternative rock, and electronic elements...";
         break;
-      case "Learn To Fly ":
+      case "Learn To Fly":
         songUrl = "assets/Audio/Ltf.mp3";
         opis = "Learn to Fly by Foo Fighters is an energetic rock song that blends catchy melodies with powerful guitar riffs...";
         break;
@@ -818,7 +818,7 @@ function changeToPlayer(){
         songUrl = "assets/Audio/Hwtpd.mp3";
         opis = "Holy Wars... The Punishment Due by Megadeth is a fast-paced thrash metal epic that addresses political and religious conflict...";
         break;
-      case "In bloom ":
+      case "In bloom":
         songUrl = "assets/Audio/Ib.mp3";
         opis = "In Bloom by Nirvana is a grunge rock song that contrasts catchy, melodic elements with deeper, more introspective lyrics...";
         break;
@@ -842,11 +842,11 @@ function changeToPlayer(){
         songUrl = "assets/Audio/Slts.mp3";
         opis = "Smells Like Teen Spirit by Nirvana is an iconic grunge anthem that revolutionized rock music...";
         break;
-      case "Pretty Fly for a white guy ":
+      case "Pretty Fly for a white guy":
         songUrl = "assets/Audio/Pffawg.mp3";
         opis = "Pretty Fly (for a White Guy) by The Offspring is a fun, upbeat punk rock song that humorously addresses cultural appropriation...";
         break;
-      case "Tornado of Souls ":
+      case "Tornado of Souls":
         songUrl = "assets/Audio/Tos.mp3";
         opis = "Tornado of Souls by Megadeth is a high-energy thrash metal track known for its intricate guitar work...";
         break;
