@@ -64,7 +64,6 @@
 
 
 
-alert("STRONA W BUDOWIE");
 
 let piosenka1 = `<div class="piosenka">
                 <img src="assets/images/FeelGoodIncGorillaz.jpg" height="80px" alt="">
@@ -766,15 +765,7 @@ function changeToPlayer(){
             <div class="songInfo"></div>
             <div class="clock">0:00:00</div>
         </section>
-    </section>
-    <section class="bottomSectionMain">
-    <div class="video-player>
-    <video class="video" controls>
-
-    </video>
-    </div>
-    </section>
-    `;
+    </section>`;
 
   
   let containerPiosenki = document.querySelector('.container');
@@ -814,109 +805,50 @@ function changeToPlayer(){
       case "Feel Good Inc":
         songUrl = "assets/Audio/Fgi.mp3";
         opis = "Feel Good Inc. by Gorillaz is a song that blends elements of alternative rock, hip-hop, and electronic music...";
-        document.querySelector('.video').innerHTML = `<source       
-        src="assets/video/fgi.mp4"
-        type="video/mp4"
-        />`;
         break;
       case "Clint Eastwood":
         songUrl = "assets/Audio/Cle.mp3";
         opis = "Clint Eastwood by Gorillaz is a genre-blending track that mixes hip-hop, alternative rock, and electronic elements...";
-        document.querySelector('.video').innerHTML = `<source       
-        src="assets/video/ce.mp4"
-        type="video/mp4"
-        />`;
-        break;
         break;
       case "Learn To Fly":
         songUrl = "assets/Audio/Ltf.mp3";
         opis = "Learn to Fly by Foo Fighters is an energetic rock song that blends catchy melodies with powerful guitar riffs...";
-        document.querySelector('.video').innerHTML = `<source       
-        src="assets/video/ltf.mp4"
-        type="video/mp4"
-        />`;
-        break;
         break;
       case "Holy Wars... The Punishment Due":
         songUrl = "assets/Audio/Hwtpd.mp3";
         opis = "Holy Wars... The Punishment Due by Megadeth is a fast-paced thrash metal epic that addresses political and religious conflict...";
-        document.querySelector('.video').innerHTML = `<source       
-        src="assets/video/hwtpd.mp4"
-        type="video/mp4"
-        />`;
-        break;
         break;
       case "In bloom":
         songUrl = "assets/Audio/Ib.mp3";
         opis = "In Bloom by Nirvana is a grunge rock song that contrasts catchy, melodic elements with deeper, more introspective lyrics...";
-        document.querySelector('.video').innerHTML = `<source       
-        src="assets/video/ib.mp4"
-        type="video/mp4"
-        />`;
-        break;
         break;
       case "Call of Ktulu":
         songUrl = "assets/Audio/Tcok.mp3";
         opis = "Call of Ktulu by Metallica is an instrumental track that blends symphonic elements with thrash metal...";
-        document.querySelector('.video').innerHTML = `<source       
-        src="assets/video/tcok.mp4"
-        type="video/mp4"
-        />`;
-        break;
         break;
       case "Drain You":
         songUrl = "assets/Audio/Dy.mp3";
         opis = "Drain You by Nirvana is a dynamic grunge rock song that combines raw energy with emotional depth...";
-        document.querySelector('.video').innerHTML = `<source       
-        src="assets/video/dy.mp4"
-        type="video/mp4"
-        />`;
-        break;
         break;
       case "Raining Blood":
         songUrl = "assets/Audio/Rb.mp3";
         opis = "Raining Blood by Slayer is an iconic thrash metal anthem known for its intense speed, aggressive riffs...";
-        document.querySelector('.video').innerHTML = `<source       
-        src="assets/video/rb.mp4"
-        type="video/mp4"
-        />`;
-        break;
         break;
       case "Repentless":
         songUrl = "assets/Audio/Rep.mp3";
         opis = "Repentless by Slayer is a fast, aggressive thrash metal track that embodies the band's signature brutal sound...";
-        document.querySelector('.video').innerHTML = `<source       
-        src="assets/video/r.mp4"
-        type="video/mp4"
-        />`;
-        break;
         break;
       case "Smells like teen spirit":
         songUrl = "assets/Audio/Slts.mp3";
         opis = "Smells Like Teen Spirit by Nirvana is an iconic grunge anthem that revolutionized rock music...";
-        document.querySelector('.video').innerHTML = `<source       
-        src="assets/video/slts.mp4"
-        type="video/mp4"
-        />`;
-        break;
         break;
       case "Pretty Fly for a white guy":
         songUrl = "assets/Audio/Pffawg.mp3";
         opis = "Pretty Fly (for a White Guy) by The Offspring is a fun, upbeat punk rock song that humorously addresses cultural appropriation...";
-        document.querySelector('.video').innerHTML = `<source       
-        src="assets/video/pf(fawg).mp4"
-        type="video/mp4"
-        />`;
-        break;
         break;
       case "Tornado of Souls":
         songUrl = "assets/Audio/Tos.mp3";
         opis = "Tornado of Souls by Megadeth is a high-energy thrash metal track known for its intricate guitar work...";
-        document.querySelector('.video').innerHTML = `<source       
-        src="assets/video/tos.mp4"
-        type="video/mp4"
-        />`;
-        break;
         break;
       default:
         songUrl = "";
@@ -954,7 +886,12 @@ function changeToPlayer(){
       zmianaPiosenek(); 
     });
   });
- while(document.querySelector('.clock')){
+  if (typeof document.querySelector(".clock") === undefined){
+  function showTime(){
+    
+  }
+}
+else{
   
   setInterval(showTime, 1000);
 
@@ -981,10 +918,8 @@ function changeToPlayer(){
     document.querySelector(".clock").innerHTML = `<h2>${currentTime}</h2>`;
   }
 
-
   showTime();
- }
-
+}
 } 
 
 
